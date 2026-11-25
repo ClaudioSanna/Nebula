@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0B0B10">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Blaze Muay Thai">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<title>Blaze Muay Thai</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+/* Layout: barra del tempo da 90' in alto, blocchi apribili sotto, timer "In sala" a schermo intero. Look scuro deliberato: nero, giallo, blu */
+:root{
+  --bg:#0B0B10; --surface:#16161D; --ink:#F5F5F7; --muted:#A3A3B0; --line:#2A2A35;
+  --accent:#FFC800; --accent-ink:#0B0B10; --sky:#1F6BFF; --sky-ink:#FFFFFF;
+  --c-soft:#3A3A46; --c-warm:#8A7420; --c-tech:#FFC800; --c-drill:#1F6BFF; --c-cond:#1546A6; --c-spar:#FFFFFF;
+  --ok:#5BD38A; --font-display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --font-body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.5;
+  padding-block:16px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:720px;margin:0 auto;display:grid;gap:18px}
+h1,h2,h3{font-family:var(--font-display);font-weight:700;line-height:1;margin:0;text-wrap:balance;letter-spacing:.01em}
+h1{font-size:clamp(40px,11vw,60px);text-transform:uppercase}
+h2{font-size:28px}h3{font-size:22px}
+p{margin:0}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.sub{color:var(--muted)}
+header{display:grid;gap:6px}
+.head-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.icon-btn{border:1px solid var(--line);background:var(--surface);border-radius:999px;min-height:44px;min-width:44px;padding:0 14px}
+
+/* tabs */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5;padding-top:6px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;min-height:44px;padding:0 16px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font-weight:700}
+.tab[aria-selected="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.tab small{display:block;font-weight:500;font-size:11px;opacity:.8;line-height:1}
+
+/* lesson header */
+.lesson-head{display:grid;gap:10px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-size:13px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--sky);color:var(--sky-ink)}
+.chip.today{background:var(--accent);color:var(--accent-ink)}
+.cta{min-height:52px;border:0;border-radius:14px;background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:17px;padding:0 20px}
+
+/* timeline */
+.timeline{display:flex;height:56px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.seg{border:0;border-right:2px solid var(--bg);padding:0;min-width:0;position:relative;display:flex;align-items:flex-end;justify-content:center;color:#fff;font-size:12px;font-weight:700;padding-bottom:5px;background:var(--c)}
+.seg:last-child{border-right:0}
+.seg[data-k="soft"]{--c:var(--c-soft);color:var(--ink)}.seg[data-k="warm"]{--c:var(--c-warm);color:#fff}
+.seg[data-k="tech"]{--c:var(--c-tech);color:var(--accent-ink)}.seg[data-k="drill"]{--c:var(--c-drill);color:#fff}
+.seg[data-k="cond"]{--c:var(--c-cond);color:#fff}.seg[data-k="spar"]{--c:var(--c-spar);color:#0B0B10}
+.seg[aria-pressed="true"]{outline:3px solid var(--ink);outline-offset:-3px}
+.scale{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;margin-top:-10px}
+
+/* blocks */
+.blocks{display:grid;gap:10px}
+.block{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.block>button{width:100%;display:flex;align-items:center;gap:12px;text-align:left;min-height:56px;padding:10px 14px;background:none;border:0}
+.dot{width:12px;height:36px;border-radius:4px;flex:0 0 auto;background:var(--c)}
+.block .t{flex:1;min-width:0;font-weight:700}
+.block .t small{display:block;color:var(--muted);font-weight:400;font-size:13px}
+.min{font-family:var(--font-display);font-size:26px;font-weight:700;font-variant-numeric:tabular-nums}
+.body{padding:2px 16px 16px 40px;display:grid;gap:10px}
+.body ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.tag{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:99px;white-space:nowrap}
+.parts .tag{text-align:center}
+.tag.S{background:var(--sky);color:var(--sky-ink)}.tag.F{background:var(--accent);color:var(--accent-ink)}.tag.P{background:var(--c-soft);color:var(--ink)}
+.parts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.parts li{display:grid;grid-template-columns:86px 1fr auto;gap:10px;align-items:start}
+.parts li span:nth-child(2){min-width:0}
+.parts b{font-family:var(--font-display);font-size:20px;font-variant-numeric:tabular-nums;line-height:1.2}
+.split{display:flex;gap:8px;flex-wrap:wrap}
+.split .tag{font-size:12px;padding:4px 10px}
+.stage-parts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.errors{background:var(--bg);border-radius:10px;padding:10px 12px;font-size:14px}
+.errors b{color:var(--accent)}
+.note{background:var(--sky);color:var(--sky-ink);border-radius:12px;padding:12px 14px;font-size:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:10px}
+.cols{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.cols>*{min-width:0}
+ul.plain{margin:0;padding-left:18px;display:grid;gap:6px}
+.table-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.cal{display:grid;gap:8px}
+.cal-row{display:grid;grid-template-columns:76px 1fr;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.cal-row .d{font-family:var(--font-display);font-size:24px;font-weight:700;line-height:1}
+.cal-row .d small{display:block;font-family:var(--font-body);font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase}
+.cal-row button{justify-self:start;border:0;background:none;padding:0;text-align:left;font-weight:700;color:var(--accent);min-height:32px}
+.cal-row .s{font-size:13px;color:var(--muted)}
+.check{display:flex;gap:12px;align-items:flex-start;min-height:44px;padding:6px 0}
+.check input{width:24px;height:24px;margin-top:1px;accent-color:var(--accent);flex:0 0 auto}
+.check label{flex:1;min-width:0}
+.check input:checked+label{text-decoration:line-through;color:var(--muted)}
+dl{margin:0;display:grid;gap:10px}
+dt{font-weight:700}dd{margin:0;color:var(--muted)}
+.progress{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+
+/* timer overlay */
+.stage{position:fixed;inset:0;z-index:50;background:var(--bg);display:none;flex-direction:column;
+  padding-block:calc(16px + env(safe-area-inset-top,0px)) calc(16px + env(safe-area-inset-bottom,0px));
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.stage.on{display:flex}
+.stage-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.stage-mid{flex:1;display:grid;place-content:center;text-align:center;gap:10px;min-width:0}
+.stage-mid .k{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.stage-mid h2{font-size:clamp(34px,10vw,56px)}
+.clock{font-family:var(--font-display);font-weight:700;font-size:clamp(120px,38vw,220px);line-height:.9;font-variant-numeric:tabular-nums}
+.clock{color:var(--accent)}
+.stage.rest{background:var(--sky);color:var(--sky-ink)}
+.stage.rest .k,.stage.rest .sub,.stage.rest .stage-tip{color:var(--sky-ink)}
+.stage.rest .clock{color:#fff}
+.stage-tip{font-size:15px;color:var(--muted);max-width:30em;margin:0 auto}
+.stage-bar{display:grid;grid-template-columns:1fr 1.6fr 1fr;gap:10px}
+.stage-bar button{min-height:64px;border-radius:16px;border:1px solid var(--line);background:var(--surface);font-weight:700;font-size:17px}
+.stage-bar .go{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<style>html{background:#0B0B10;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}body{margin:0}</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="head-row">
+      <div>
+        <div class="eyebrow">Muay Thai · principianti e amatori</div>
+        <h1>Settimana tipo</h1>
+      </div>
+    </div>
+    <p class="sub">3 lezioni da 90 minuti · lunedì, mercoledì, venerdì · venerdì sparring tecnico leggero. Si parte mercoledì 2 dicembre 2026.</p>
+  </header>
+
+  <nav class="tabs" id="tabs" role="tablist" aria-label="Sezioni"></nav>
+  <main id="view" aria-live="polite"></main>
+</div>
+
+<div class="stage" id="stage" role="dialog" aria-label="Modalità in sala">
+  <div class="stage-top">
+    <button class="icon-btn" id="stClose">Esci</button>
+    <span class="sub" id="stPos"></span>
+  </div>
+  <div class="stage-mid">
+    <div class="k" id="stKind"></div>
+    <h2 id="stName"></h2>
+    <div class="clock" id="stClock">00:00</div>
+    <p class="stage-tip" id="stTip"></p>
+  </div>
+  <div class="stage-bar">
+    <button id="stPrev">← Prima</button>
+    <button class="go" id="stGo">Avvia</button>
+    <button id="stNext">Dopo →</button>
+  </div>
+</div>
+
+<script>
+const LESSONS = {"lun":{"tab":"Lun","day":"Lunedì","title":"Base e pugni","goal":"Guardia stabile, posizione dei piedi, spostamenti, i tre pugni base e una difesa semplice.","intensity":"Media","dow":1,"errors":"Mani che scendono dopo il colpo · pugno solo di braccio · piedi incrociati negli spostamenti · respiro trattenuto.","blocks":[{"n":"Accoglienza e regole","m":5,"k":"soft","p":[["Saluto in fila e presentazione",2,"P"],["Regole di sicurezza, chi ha infortuni o limitazioni",3,"S"]],"i":["Saluto con un breve inchino (wai)"]},{"n":"Riscaldamento","m":15,"k":"warm","p":[["Corda o corsetta leggera",3,"F"],["Mobilità: caviglie, anche, spalle, polsi, collo",2,"F"],["Skip, calciate dietro, ginocchia alte, affondi",3,"F"],["Shadow boxing lento sulla guardia",3,"F"],["Attivazione: 2×10 push-up, 2×15 squat, 2×20\" plank",3,"F"],["Cambi e acqua",1,"P"]],"i":[]},{"n":"Tecnica","m":30,"k":"tech","p":[["Guardia e posizione: spiegazione e dimostrazione",1,"S"],["Guardia e posizione: prova",4,"F"],["Spostamenti: spiegazione e dimostrazione",1,"S"],["Spostamenti: prova",3,"F"],["Jab: spiegazione e dimostrazione",1,"S"],["Jab: prova",4,"F"],["Cross: spiegazione e dimostrazione",1,"S"],["Cross: prova",4,"F"],["Hook: spiegazione e dimostrazione",1,"S"],["Hook: prova",4,"F"],["Combinazioni 1-2 e 1-2-hook: spiegazione e dimostrazione",1,"S"],["Combinazioni 1-2 e 1-2-hook: prova",3,"F"],["Acqua e passaggi",2,"P"]],"i":["Guardia: piedi a larghezza spalle, passo avanti di mezzo metro, peso 50/50, mento basso, mani alte","Spostamenti: avanti, indietro, laterale, senza incrociare i piedi","Jab: spinta dal piede posteriore, ritorno veloce alla guardia","Cross: rotazione di piede, anca e spalla","Hook: gomito alto, ruota il corpo, non solo il braccio"]},{"n":"Drill ai colpitori","m":20,"k":"drill","r":{"n":4,"w":120,"p":30},"p":[["Formare le coppie e prendere i colpitori",3,"P"],["Spiegare il drill e l'obiettivo dei round",2,"S"],["4 round da 2' (A, B, A, B)",8,"F"],["Cambio ruolo tra i round: 3 × 30\"",1.5,"P"],["Correzioni, una per coppia",2,"S"],["Acqua",2,"P"],["Riordino dei colpitori",1.5,"P"]],"i":["Coppie: uno tiene i colpitori, uno colpisce, cambio ruolo a ogni round","Round 1: solo jab e 1-2 lenti","Round 2: 1-2-hook","Round 3: libero sulle combinazioni apprese","Round 4: libero, ritmo un po' più alto"]},{"n":"Condizionamento","m":12,"k":"cond","p":[["Spiegare il circuito",1,"S"],["3 giri da 3': corda 1' · plank 30\" · affondi alternati 40\" · bicicletta addominale 40\" · riposo 30\"",9,"F"],["Cambi e acqua",2,"P"]],"i":[]},{"n":"Defaticamento","m":8,"k":"soft","p":[["Camminata e respirazione",2,"F"],["Stretching statico, 20-30\" a posizione",5,"F"],["Feedback e saluto: una cosa positiva e una correzione a testa",1,"S"]],"i":["Adduttori, quadricipiti, flessori dell'anca, polpacci, spalle, collo"]}]},"mer":{"tab":"Mer","day":"Mercoledì","title":"Calci e ginocchia","goal":"Equilibrio e rotazione dell'anca, i calci base, la ginocchiata diretta, la difesa dal calcio.","intensity":"Media-alta","dow":3,"errors":"Calcio dal solo ginocchio senza anca · piede d'appoggio che non ruota · busto troppo indietro · guardia che crolla durante il calcio.","blocks":[{"n":"Accoglienza e ripasso","m":5,"k":"soft","p":[["Saluto in fila",1,"P"],["Ripasso rapido della lezione precedente",3,"S"],["Domande",1,"S"]],"i":[]},{"n":"Riscaldamento","m":15,"k":"warm","p":[["Corda o corsetta leggera",3,"F"],["Mobilità d'anca: cerchi d'anca, oscillazioni della gamba",3,"F"],["Skip, calciate dietro, ginocchia alte, affondi",3,"F"],["Shadow boxing lento",2,"F"],["Attivazione: push-up, squat, plank",3,"F"],["Cambi e acqua",1,"P"]],"i":[]},{"n":"Tecnica","m":30,"k":"tech","p":[["Teep: spiegazione e dimostrazione",2,"S"],["Teep: prova",4,"F"],["Calcio circolare: spiegazione e dimostrazione",2,"S"],["Calcio circolare: prova a vuoto e sul sacco",7,"F"],["Ginocchiata diretta: spiegazione e dimostrazione",1,"S"],["Ginocchiata diretta: prova",4,"F"],["Difesa dal calcio (check): spiegazione e dimostrazione",2,"S"],["Difesa dal calcio (check): prova con partner",6,"F"],["Acqua e passaggi",2,"P"]],"i":["Teep (calcio frontale a spinta): ginocchio su, anca avanti, spinta con la pianta del piede, equilibrio","Calcio circolare (tae): pivot sul piede d'appoggio, rotazione dell'anca, braccio opposto che accompagna. Colpisci con lo stinco, non con il piede","Ginocchiata diretta (khao): anche avanti, busto leggermente indietro, mani che guidano","Check: alza lo stinco davanti al calcio in arrivo, prima da fermo, poi con un partner che calcia lento"]},{"n":"Drill ai colpitori","m":20,"k":"drill","r":{"n":4,"w":120,"p":30},"p":[["Formare le coppie e prendere i colpitori",3,"P"],["Spiegare il drill e l'obiettivo dei round",2,"S"],["4 round da 2' (A, B, A, B)",8,"F"],["Cambio ruolo tra i round: 3 × 30\"",1.5,"P"],["Correzioni, una per coppia",2,"S"],["Acqua",2,"P"],["Riordino dei colpitori",1.5,"P"]],"i":["Round 1: teep e calcio circolare","Round 2: combinazioni pugno + calcio (1-2-calcio)","Round 3: aggiungi la ginocchiata","Round 4: libero, alternando gamba destra e sinistra"]},{"n":"Condizionamento","m":12,"k":"cond","p":[["Spiegare il circuito",1,"S"],["3 giri da 2'50\": squat con salto 30\" · plank laterale 20\" per lato · calci a vuoto 40\" · mountain climber 30\" · riposo 30\"",8.5,"F"],["Cambi e acqua",2.5,"P"]],"i":[]},{"n":"Defaticamento","m":8,"k":"soft","p":[["Camminata e respirazione",2,"F"],["Stretching statico, 20-30\" a posizione",5,"F"],["Feedback e saluto: una cosa positiva e una correzione a testa",1,"S"]],"i":["Più attenzione a anche e adduttori"]}]},"ven":{"tab":"Ven","day":"Venerdì","title":"Combinazioni e sparring","goal":"Unire quanto imparato, conoscere il clinch di base, provare lo sparring in sicurezza.","intensity":"Media · contatto 20-30%","dow":5,"note":"Prima settimana: venerdì 4 dicembre niente sparring. Il primo sparring leggero è venerdì 11 dicembre.","errors":"Colpire troppo forte · abbassare la guardia dopo ogni combinazione · dimenticare di respirare · partner troppo diversi per taglia o livello.","blocks":[{"n":"Accoglienza e regole di sparring","m":5,"k":"soft","p":[["Saluto in fila",1,"P"],["Regole di sicurezza dello sparring",2,"S"],["Controllo delle protezioni",2,"P"]],"i":[]},{"n":"Riscaldamento","m":15,"k":"warm","p":[["Corda o corsetta leggera",3,"F"],["Mobilità articolare",2,"F"],["Skip, calciate dietro, affondi",3,"F"],["Shadow boxing a ritmo crescente",2,"F"],["Attivazione: push-up, squat, plank",3,"F"],["Cambi e acqua",2,"P"]],"i":[]},{"n":"Ripasso e combinazioni","m":20,"k":"tech","p":[["Prendere i colpitori e formare le coppie",2,"P"],["Spiegare le 3 combinazioni (1' ciascuna)",3,"S"],["3 combinazioni × 2' (a vuoto e ai colpitori)",6,"F"],["Cambi",1,"P"],["Difesa: spiegazione e dimostrazione",1,"S"],["Difesa in coppia a ritmo lento: parata, schivata, check",4,"F"],["Correzioni",1,"S"],["Acqua",2,"P"]],"i":["1-2-calcio circolare","Jab-teep-cross","1-2-hook-calcio basso"]},{"n":"Clinch, introduzione","m":10,"k":"tech","p":[["Spiegare presa e controllo",2,"S"],["2 turni da 3' tra compagni di taglia simile",6,"F"],["Cambio coppie",1,"P"],["Acqua",1,"P"]],"i":["Presa del collo (plum) e controllo del partner","Spinta e tirata con i polsi, posizione di base","Nessuna proiezione e nessuna ginocchiata piena: solo posizione, equilibrio e respirazione"]},{"n":"Sparring tecnico leggero","m":25,"k":"spar","r":{"n":6,"w":120,"p":60},"p":[["Protezioni e coppie",3,"P"],["Istruzioni sui temi dei round",2,"S"],["6 round da 2'",12,"F"],["5 pause da 1': cambio compagno ogni due round, correzione breve",5,"P"],["Feedback finale",3,"S"]],"i":["Contatto 20-30%, solo tecnica, ritmo lento","Round 1 solo pugni · 2 pugni e teep · 3 pugni e calci al corpo · 4 libero tecnico · 5 e 6 libero tecnico con nuovo partner"]},{"n":"Condizionamento","m":7,"k":"cond","p":[["Spiegare il circuito",1,"S"],["2 giri da 2': plank 30\" · squat 40\" · push-up 20\" · riposo 30\"",4,"F"],["Acqua",2,"P"]],"i":[]},{"n":"Defaticamento","m":8,"k":"soft","p":[["Camminata e respirazione",2,"F"],["Stretching statico, 20-30\" a posizione",5,"F"],["Feedback e saluto: una cosa positiva e una correzione a testa",1,"S"]],"i":[]}]}};
+const KIND = {soft:'Accoglienza / defaticamento',warm:'Riscaldamento',tech:'Tecnica',drill:'Drill',cond:'Condizionamento',spar:'Sparring'};
+const PLAN = [
+  {d:2,wd:'mer',lesson:'lun',label:'Lezione 1 · base e pugni',s:'Con presentazione, moduli, certificati e regole'},
+  {d:4,wd:'ven',lesson:'mer',label:'Lezione 2 alleggerita · calci e ginocchia',s:'Più tempo su equilibrio e tecnica a vuoto, drill in coppia senza contatto, niente sparring'},
+  {d:7,wd:'lun',lesson:'lun',label:'Lezione 1 · base e pugni',s:'Con le combinazioni 1-2-hook'},
+  {d:9,wd:'mer',lesson:'mer',label:'Lezione 2 · calci e ginocchia',s:'Completa'},
+  {d:11,wd:'ven',lesson:'ven',label:'Lezione 3 · combinazioni e sparring',s:'Primo sparring tecnico leggero'}
+];
+const MONTH = [
+  ['1 · 2-11 dic.','Fondamentali: guardia, pugni, teep e calcio circolare','Nessuno, poi primo leggero l\'11 dicembre'],
+  ['2','Combinazioni pugno-calcio, difesa','Tecnico leggero, 4 round'],
+  ['3','Clinch di base, ginocchiate controllate, difesa dal calcio','Tecnico leggero, 5-6 round'],
+  ['4','Ripasso e valutazione, piccola dimostrazione tra compagni','Tecnico leggero più dinamico, sempre controllato']
+];
+const SAFETY = {
+  gear:['Paradenti','Paratibie','Guantoni da 14-16 oz','Conchiglia','Fasce alle mani','Caschetto leggero (facoltativo)'],
+  rules:['Contatto controllato: 20-30% della forza','Niente colpi pieni alla testa, né a ginocchia e articolazioni','Partner di livello e peso simili, cambio compagno ogni due round','Al fischio o a "stop" ci si ferma subito','Chi è stanco o si sente male lo dice senza dover spiegare','Lo sparring è una scelta: chi non vuole continua ai colpitori','Prima settimana: nessuno sparring, solo drill a contatto zero o molto leggero']
+};
+const CHECK = {
+  'Prima della lezione':['Sala pulita e sicura, pavimento libero','Colpitori, sacchi, corde, timer dei round','Protezioni di riserva (paradenti, paratibie, guantoni)','Kit di pronto soccorso e ghiaccio istantaneo','Acqua e asciugamani'],
+  'Amministrazione':['Registro presenze','Certificato medico di idoneità e liberatoria per ogni allievo (genitori se minorenni)','Assicurazione della palestra e tua copertura da istruttore'],
+  'Dopo la lezione':['Annota infortuni, punti da correggere, cosa preparare','Controlla l\'attrezzatura']
+};
+const GLOSS = [['Wai','Saluto con le mani giunte e un breve inchino, verso il maestro e i compagni'],['Teep','Calcio frontale a spinta'],['Tae','Calcio circolare'],['Khao','Ginocchiata'],['Plum','Presa del collo nel clinch'],['Check','Difesa dal calcio sollevando lo stinco']];
+
+const $ = s => document.querySelector(s);
+const TABS = [['lun','Lun'],['mer','Mer'],['ven','Ven'],['mese','Primo mese'],['sicurezza','Sicurezza'],['checklist','Checklist'],['glossario','Parole']];
+const store = {
+  get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+};
+const todayDow = new Date().getDay();
+let current = (location.hash||'').slice(1);
+if(!TABS.some(t=>t[0]===current)){ current = ({1:'lun',3:'mer',5:'ven'})[todayDow] || 'lun'; }
+const openBlock = {};
+
+const fm=x=>{const m=Math.floor(x),sec=Math.round((x-m)*60);return !sec?`${m}'`:m?`${m}'${String(sec).padStart(2,'0')}"`:`${sec}"`};
+const TAGN={S:'Spiegare',F:'Fare',P:'Passaggi'};
+const sums=ps=>ps.reduce((o,p)=>(o[p[2]]+=p[1],o),{S:0,F:0,P:0});
+const splitHtml=ps=>{const t=sums(ps);return '<div class="split">'+['S','F','P'].filter(k=>t[k]).map(k=>`<span class="tag ${k}">${TAGN[k]} ${fm(t[k])}</span>`).join('')+'</div>'};
+function renderTabs(){
+  $('#tabs').innerHTML = TABS.map(([id,l])=>{
+    const L = LESSONS[id];
+    const sub = L ? `<small>${L.title.split(' ')[0]}</small>` : '';
+    return `<button class="tab" role="tab" data-t="${id}" aria-selected="${id===current}">${l}${sub}</button>`;
+  }).join('');
+}
+function lessonView(id){
+  const L = LESSONS[id];
+  const isToday = L.dow===todayDow;
+  const open = openBlock[id] ?? -1;
+  const bar = L.blocks.map((b,i)=>`<button class="seg" data-k="${b.k}" style="flex:${b.m}" data-b="${i}" aria-pressed="${open===i}" aria-label="${b.n}, ${b.m} minuti">${b.m}'</button>`).join('');
+  const blocks = L.blocks.map((b,i)=>{
+    const isOpen = open===i;
+    const rounds = b.r ? `<p class="sub">${b.r.n} round da ${fm(b.r.w/60)} · pausa ${fm(b.r.p/60)} (il timer segue solo i round)</p>` : '';
+    const parts = `<ul class="parts">${b.p.map(p=>`<li><span class="tag ${p[2]}">${TAGN[p[2]]}</span><span>${p[0]}</span><b>${fm(p[1])}</b></li>`).join('')}</ul>`;
+    const pts = b.i.length ? `<ul>${b.i.map(x=>`<li>${x}</li>`).join('')}</ul>` : '';
+    return `<div class="block" style="--c:var(--c-${b.k})"><button data-toggle="${i}" aria-expanded="${isOpen}">
+      <span class="dot"></span><span class="t">${b.n}<small>${KIND[b.k]}</small></span><span class="min">${fm(b.m)}</span></button>
+      ${isOpen?`<div class="body">${splitHtml(b.p)}${rounds}${parts}${b.i.length?'<h3 style="font-size:18px">Punti da curare</h3>':''}${pts}</div>`:''}</div>`;
+  }).join('');
+  return `<section class="lesson-head">
+    <div class="chips"><span class="chip">${L.day}</span><span class="chip">90 minuti</span><span class="chip">${L.intensity}</span>${isToday?'<span class="chip today">Oggi</span>':''}</div>
+    <h2>${L.title}</h2><p class="sub">${L.goal}</p>
+    ${splitHtml(L.blocks.flatMap(b=>b.p))}<button class="cta" data-live="${id}">Avvia in sala</button></section>
+    <div><div class="timeline" role="group" aria-label="Linea del tempo della lezione">${bar}</div></div>
+    <div class="scale"><span>0'</span><span>30'</span><span>60'</span><span>90'</span></div>
+    ${L.note?`<div class="note">${L.note}</div>`:''}
+    <div class="blocks">${blocks}</div>
+    <div class="errors"><b>Errori comuni.</b> ${L.errors}</div>`;
+}
+function meseView(){
+  const cal = PLAN.map(p=>`<div class="cal-row"><div class="d">${p.d}<small>${p.wd} dic.</small></div>
+    <div><button data-go="${p.lesson}">${p.label}</button><div class="s">${p.s}</div></div></div>`).join('');
+  const rows = MONTH.map(r=>`<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('');
+  return `<div class="cols" style="grid-template-columns:1fr"><div class="card"><h2>Prima settimana</h2>
+    <p class="sub">Il 1° dicembre è un martedì: si parte mercoledì 2.</p><div class="cal">${cal}</div></div>
+    <div class="card"><h2>Il mese in sintesi</h2><div class="table-wrap"><table><thead><tr><th>Settimana</th><th>Focus</th><th>Sparring</th></tr></thead><tbody>${rows}</tbody></table></div></div></div>`;
+}
+function sicurezzaView(){
+  return `<div class="cols"><div class="card"><h2>Protezioni obbligatorie</h2><ul class="plain">${SAFETY.gear.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+    <div class="card"><h2>Regole dello sparring</h2><ul class="plain">${SAFETY.rules.map(x=>`<li>${x}</li>`).join('')}</ul></div></div>
+    <div class="note">Proposta didattica, non un protocollo medico. Per idoneità, assicurazione e responsabilità dell'istruttore vale il regolamento della palestra o della federazione.</div>`;
+}
+function checklistView(){
+  const saved = store.get('mt-check') || {};
+  let total=0, done=0;
+  const groups = Object.entries(CHECK).map(([g,items])=>`<div class="card"><h3>${g}</h3>${items.map((x,i)=>{
+    const key=g+'|'+i; total++; if(saved[key]) done++;
+    return `<div class="check"><input type="checkbox" id="c${total}" data-key="${key}" ${saved[key]?'checked':''}><label for="c${total}">${x}</label></div>`;}).join('')}</div>`).join('');
+  return `<div class="card"><div style="display:flex;justify-content:space-between"><b>Pronto per la lezione</b><span id="cnt" class="sub">${done}/${total}</span></div>
+    <div class="progress"><i id="bar" style="width:${total?done/total*100:0}%"></i></div>
+    <button class="icon-btn" id="reset" style="justify-self:start">Azzera</button></div>${groups}`;
+}
+function glossView(){
+  return `<div class="card"><h2>Parole thailandesi</h2><dl>${GLOSS.map(([a,b])=>`<div><dt>${a}</dt><dd>${b}</dd></div>`).join('')}</dl></div>`;
+}
+function render(){
+  renderTabs();
+  const v = $('#view');
+  v.innerHTML = LESSONS[current] ? lessonView(current)
+    : current==='mese' ? meseView() : current==='sicurezza' ? sicurezzaView()
+    : current==='checklist' ? checklistView() : glossView();
+  v.style.display='grid'; v.style.gap='16px';
+}
+function go(id){ current=id; try{history.replaceState(null,'','#'+id)}catch(e){} render(); window.scrollTo({top:0}); }
+
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-t],[data-toggle],[data-b],[data-live],[data-go],#reset');
+  if(!t) return;
+  if(t.dataset.t) return go(t.dataset.t);
+  if(t.dataset.go) return go(t.dataset.go);
+  if(t.dataset.toggle!==undefined){const i=+t.dataset.toggle; openBlock[current]=openBlock[current]===i?-1:i; return render();}
+  if(t.dataset.b!==undefined){openBlock[current]=+t.dataset.b; render(); const el=document.querySelector(`[data-toggle="${t.dataset.b}"]`); if(el) el.scrollIntoView({block:'center',behavior:'smooth'}); return;}
+  if(t.dataset.live) return startStage(t.dataset.live);
+  if(t.id==='reset'){store.set('mt-check',{}); render();}
+});
+document.addEventListener('change',e=>{
+  if(e.target.matches('[data-key]')){
+    const s=store.get('mt-check')||{}; s[e.target.dataset.key]=e.target.checked; store.set('mt-check',s);
+    const boxes=[...document.querySelectorAll('[data-key]')], n=boxes.filter(b=>b.checked).length;
+    $('#cnt').textContent=n+'/'+boxes.length; $('#bar').style.width=(n/boxes.length*100)+'%';
+  }
+});
+addEventListener('hashchange',()=>{const h=location.hash.slice(1); if(TABS.some(t=>t[0]===h)&&h!==current){current=h;render();}});
+
+/* ---- Modalità in sala ---- */
+let S=null, tick=null, wake=null, actx=null;
+const fmt=s=>String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
+function beep(f=880,ms=180){
+  try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();
+    o.frequency.value=f;g.gain.value=.15;o.connect(g);g.connect(actx.destination);o.start();o.stop(actx.currentTime+ms/1000);}catch(e){}
+  try{navigator.vibrate&&navigator.vibrate(ms)}catch(e){}
+}
+function startStage(id){
+  S={id,b:0,ph:'work',round:1,left:0,run:false};
+  $('#stage').classList.add('on'); document.body.style.overflow='hidden';
+  try{navigator.wakeLock&&navigator.wakeLock.request('screen').then(w=>wake=w).catch(()=>{})}catch(e){}
+  loadBlock(0);
+}
+function loadBlock(i){
+  const L=LESSONS[S.id]; S.b=Math.max(0,Math.min(L.blocks.length-1,i)); const b=L.blocks[S.b];
+  S.run=false; clearInterval(tick); S.ph='work'; S.round=1; S.left=b.r?b.r.w:b.m*60; paint();
+}
+function tipFor(b){
+  if(b.r) return b.i[0]||'';
+  const el=b.m*60-S.left; let acc=0;
+  for(let k=0;k<b.p.length;k++){acc+=b.p[k][1]*60; if(el<acc||k===b.p.length-1){const n=b.p[k+1];return TAGN[b.p[k][2]]+': '+b.p[k][0]+(n&&el<acc?'  →  poi: '+n[0]:'');}}
+  return '';
+}
+function paint(){
+  const L=LESSONS[S.id], b=L.blocks[S.b], st=$('#stage');
+  st.classList.toggle('rest',S.ph==='rest');
+  $('#stPos').textContent=`Blocco ${S.b+1} di ${L.blocks.length} · ${L.day}`;
+  $('#stKind').textContent = b.r ? (S.ph==='rest'?`Pausa · round ${S.round} di ${b.r.n}`:`Round ${S.round} di ${b.r.n}`) : KIND[b.k]+' · '+b.m+' min';
+  $('#stName').textContent = S.ph==='rest'?'Riposo':b.n;
+  $('#stClock').textContent=fmt(S.left);
+  $('#stTip').textContent=tipFor(b);
+  $('#stGo').textContent=S.run?'Pausa':'Avvia';
+}
+function step(){
+  S.left--;
+  if(S.left<=3&&S.left>0) beep(660,80);
+  if(S.left<=0){
+    const b=LESSONS[S.id].blocks[S.b];
+    if(b.r){
+      if(S.ph==='work'){
+        if(S.round>=b.r.n){beep(1000,500);S.run=false;clearInterval(tick);S.left=0;paint();$('#stKind').textContent='Round finiti';return;}
+        S.ph='rest';S.left=b.r.p;beep(520,350);
+      }else{S.ph='work';S.round++;S.left=b.r.w;beep(1000,350);}
+    }else{beep(1000,500);S.run=false;clearInterval(tick);S.left=0;}
+  }
+  paint();
+}
+$('#stGo').onclick=()=>{
+  if(!S)return; beep(0.1,1);
+  if(S.run){S.run=false;clearInterval(tick);}
+  else{ if(S.left<=0){loadBlock(S.b);} S.run=true;tick=setInterval(step,1000);}
+  paint();
+};
+$('#stNext').onclick=()=>loadBlock(S.b+1);
+$('#stPrev').onclick=()=>loadBlock(S.b-1);
+$('#stClose').onclick=()=>{
+  clearInterval(tick); S=null; $('#stage').classList.remove('on'); document.body.style.overflow='';
+  try{wake&&wake.release()}catch(e){} wake=null;
+};
+
+render();
+</script>
+<script>
+if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));}
+</script>
+</body>
+</html>

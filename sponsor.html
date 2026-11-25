@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Blaze – Programma Atleti</title>
+<style>
+/* ====== TOKENS: cambia questi per ri-brandizzare tutta la presentazione ====== */
+:root{
+  --bg:#FFD9C4;        /* sfondo slide */
+  --accent:#FF7F27;    /* colore principale */
+  --ink:#4D2D1C;       /* testo scuro */
+  --paper:#FFFFFF;     /* card chiare */
+  --sky:#B5F7FF;       /* secondo accento */
+  --font:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --pop:cubic-bezier(.34,1.56,.64,1);   /* easing "molla" per le entrate */
+}
+@media (prefers-color-scheme:dark){:root{--bg:#2a1710;--ink:#FFD9C4;--paper:#3b2217}}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:var(--font)}
+body{-webkit-user-select:none;user-select:none;touch-action:pan-y}
+
+/* ====== STAGE & SLIDE ====== */
+.deck{position:fixed;inset:0}
+.slide{position:absolute;inset:0;display:grid;place-items:center;padding:6vmin 6vmin 18vmin;
+  opacity:0;visibility:hidden;transform:translateX(4%);transition:opacity .5s ease,transform .6s ease,visibility 0s .6s}
+.slide.is-active{opacity:1;visibility:visible;transform:none;transition:opacity .5s ease,transform .6s ease}
+.slide.is-past{transform:translateX(-4%)}
+.slide.bleed{padding:0}
+
+/* ====== ENTRATE A CASCATA: data-anim="1,2,3…" = ordine ====== */
+[data-anim]{opacity:0;transform:scale(.55) translateY(4vmin);transition:none}
+.is-active [data-anim]{opacity:1;transform:none;
+  transition:opacity .45s ease,transform .8s var(--pop);
+  transition-delay:calc(var(--i,1)*110ms + 150ms)}
+.is-active [data-anim="2"]{--i:2}.is-active [data-anim="3"]{--i:3}
+.is-active [data-anim="4"]{--i:4}.is-active [data-anim="5"]{--i:5}.is-active [data-anim="6"]{--i:6}
+
+/* ====== COMPONENTI ====== */
+.stage{width:min(900px,100%);position:relative}
+.card{background:var(--paper);border-radius:2.4vmin;box-shadow:0 1.5vmin 4vmin rgba(77,45,28,.12);overflow:hidden}
+.eyebrow{font-size:clamp(11px,1.8vmin,15px);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1,h2{font-weight:900;line-height:.95;color:var(--accent);letter-spacing:-.02em}
+h1{font-size:clamp(48px,14vmin,150px)}
+h2{font-size:clamp(34px,8vmin,80px)}
+p{font-size:clamp(15px,2.4vmin,22px);line-height:1.45;max-width:34em}
+
+/* cover */
+.cover{text-align:left;display:grid;gap:3vmin}
+
+/* collage di card sparse (stile "Application") */
+.collage{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:11vmin;gap:2vmin}
+.collage .card{display:grid;place-items:center;font-weight:800;color:var(--accent);font-size:2.4vmin;text-align:center;padding:1vmin}
+.c1{grid-column:1/4;grid-row:1/4;background:linear-gradient(135deg,#2e7d32,#154a18);color:#fff!important}
+.c2{grid-column:4/7;grid-row:1/6;background:var(--paper)}
+.c3{grid-column:1/3;grid-row:4/6;background:var(--sky)}
+.c4{grid-column:3/4;grid-row:4/6;background:var(--accent);color:#fff!important}
+
+/* palette */
+.palette{display:grid;grid-template-columns:repeat(6,1fr);gap:2vmin}
+.sw{padding:2.4vmin;min-height:20vmin;display:flex;flex-direction:column;justify-content:flex-end;gap:.4vmin;font-size:1.7vmin;line-height:1.4}
+.sw b{font-size:2.6vmin;text-transform:uppercase;letter-spacing:.04em}
+.sw:nth-child(1){grid-column:1/4}.sw:nth-child(2){grid-column:4/7}
+.sw:nth-child(3){grid-column:1/3}.sw:nth-child(4){grid-column:3/5}.sw:nth-child(5){grid-column:5/7}
+
+/* tipografia */
+.type{display:grid;gap:2.4vmin}
+.type .row{display:flex;justify-content:space-between;align-items:baseline;border-top:2px solid var(--accent);padding-top:1.4vmin;gap:2vmin}
+.type small{font-size:1.7vmin;color:var(--accent);font-weight:600}
+.t-h{font-size:10vmin;font-weight:900;color:var(--accent);line-height:1}
+.t-s{font-size:6vmin;font-weight:700}.t-b{font-size:2.6vmin;font-weight:400}
+
+/* pattern */
+.pattern{aspect-ratio:3/4;max-height:70vh;margin:auto;border-radius:3vmin;
+  background:
+    radial-gradient(circle at 25% 25%,var(--accent) 0 7%,transparent 7.5%),
+    radial-gradient(circle at 75% 60%,var(--paper) 0 9%,transparent 9.5%),
+    radial-gradient(circle at 40% 80%,var(--ink) 0 5%,transparent 5.5%),
+    var(--sky);
+  background-size:22% 16%;
+  animation:drift 14s linear infinite}
+@keyframes drift{to{background-position:22% 16%}}
+
+/* mascotte / marchio isolato */
+.mark{width:min(40vmin,300px);aspect-ratio:1;border-radius:50%;background:var(--accent);display:grid;place-items:center;
+  color:var(--bg);font-size:14vmin;font-weight:900}
+.is-active .mark{animation:float 4s ease-in-out 1s infinite}
+@keyframes float{50%{transform:translateY(-2vmin) rotate(4deg)}}
+
+/* slide a tutto schermo (foto/mockup) */
+.full{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.08);transition:transform 6s ease-out}
+.is-active .full{transform:scale(1)}
+.full-1{background-image:linear-gradient(160deg,#1f7a2e,#0d3d15)}
+.full-2{background-image:linear-gradient(160deg,#4fc3d9,#1b7a90)}
+.caption{position:absolute;left:6vmin;bottom:20vmin;color:#fff;font-size:clamp(28px,7vmin,70px);font-weight:900;line-height:1;text-shadow:0 .5vmin 3vmin rgba(0,0,0,.35)}
+
+/* ====== BARRA DI AVANZAMENTO: linea + punto + etichetta sezione ====== */
+.progress{position:fixed;left:6vmin;right:6vmin;bottom:5vmin;z-index:10;pointer-events:none;height:9vmin}
+.progress .line{position:absolute;left:0;right:0;top:0;height:2px;background:var(--accent);opacity:.5}
+.progress .dot{position:absolute;top:-.8vmin;width:2vmin;height:2vmin;margin-left:-1vmin;border-radius:50%;background:var(--accent);
+  transition:left .6s var(--pop)}
+.progress .label{position:absolute;top:2vmin;transform:translateX(-50%);font-size:clamp(12px,2vmin,18px);font-weight:700;color:var(--accent);
+  white-space:nowrap;transition:left .6s var(--pop)}
+.has-full .progress .line{background:#fff}.has-full .progress .dot,.has-full .progress .label{color:#fff;background:transparent}
+.has-full .progress .dot{background:#fff}
+/* il pallino segue la slide anche per tocco diretto sulla linea */
+.progress .hit{position:absolute;left:0;right:0;top:-2vmin;height:6vmin;pointer-events:auto;cursor:pointer}
+
+/* frecce */
+.nav{position:fixed;top:50%;z-index:10;translate:0 -50%;width:6vmin;height:6vmin;min-width:40px;min-height:40px;border-radius:50%;
+  border:0;background:var(--accent);color:#fff;font-size:3vmin;cursor:pointer;opacity:.85;transition:transform .3s var(--pop),opacity .2s}
+.nav:hover{transform:scale(1.12);opacity:1}
+.nav.prev{left:2vmin}.nav.next{right:2vmin}
+.nav[disabled]{opacity:0;pointer-events:none}
+@media (max-width:640px){.nav{display:none}.palette,.collage{gap:1.4vmin}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important;transition-delay:0s!important}}
+</style>
+</head>
+<body>
+
+<main class="deck" id="deck">
+
+  <section class="slide" data-label="Blaze">
+    <div class="stage cover">
+      <span class="eyebrow" data-anim="1">Programma atleti Muay Thai</span>
+      <h1 data-anim="2">Blaze</h1>
+      <p data-anim="3">Un brand che finanzia il viaggio di giovani combattenti verso la Thailandia. Tu ci metti il nome, loro ci mettono la strada.</p>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Visione">
+    <div class="stage" style="display:grid;gap:3vmin">
+      <span class="eyebrow" data-anim="1">Visione</span>
+      <h2 data-anim="2">Aprire la strada.</h2>
+      <p data-anim="3"><i>Blaze</i> viene dall'inglese antico <i>blæse</i>, "torcia, fiamma viva". E "to blaze a trail" è aprire un sentiero dove prima non c'era. È quello che fa un giovane atleta che parte.</p>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Il ciclo">
+    <div class="stage collage">
+      <div class="card c1" data-anim="1">Il brand<br>genera visibilità e ricavi</div>
+      <div class="card c2" data-anim="2"><h2>Fondo<br>Viaggi</h2></div>
+      <div class="card c3" data-anim="3">L'atleta parte</div>
+      <div class="card c4" data-anim="4">Contenuti</div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Il camp">
+    <div class="stage" style="display:grid;gap:3vmin">
+      <span class="eyebrow" data-anim="1">Thailandia</span>
+      <h2 data-anim="2">Allenarsi dove nasce.</h2>
+      <p data-anim="3">Gli atleti si allenano in Thailandia con Gabriele, coach e nostro contatto sul posto: camp, alloggio, calendario degli incontri.</p>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Budget">
+    <div class="stage type">
+      <div class="row" data-anim="1"><span class="t-s">Viaggio breve</span><small>2-4 settimane · stima da verificare</small></div>
+      <div class="row" data-anim="2"><span class="t-s">Viaggio medio</span><small>2-3 mesi · stima da verificare</small></div>
+      <div class="row" data-anim="3"><span class="t-b">Il budget definitivo per atleta sarà fissato con il listino del camp. Il Fondo Viaggi copre almeno volo, assicurazione e soggiorno.</span><small>Cosa copriamo</small></div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Per lo sponsor">
+    <div class="stage collage">
+      <div class="card c1" data-anim="1">Logo su<br>fight wear</div>
+      <div class="card c2" data-anim="2"><h2>Visibilità<br>vera</h2></div>
+      <div class="card c3" data-anim="3">Reel e diario</div>
+      <div class="card c4" data-anim="4">Report</div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Trasparenza">
+    <div class="stage" style="display:grid;gap:3vmin">
+      <span class="eyebrow" data-anim="1">Trasparenza</span>
+      <h2 data-anim="2">Il ritorno è visibilità.</h2>
+      <p data-anim="3">Nessuna promessa di rendimento. Ogni sponsor riceve un rendiconto del Fondo Viaggi e i contenuti prodotti dall'atleta.</p>
+    </div>
+  </section>
+
+  <section class="slide bleed" data-label="Contatti" data-full>
+    <div class="full full-1"></div>
+    <div class="caption" data-anim="1">Accendi la miccia.<br><small style="font-size:.35em;font-weight:600">nebula.sassari@gmail.com</small></div>
+  </section>
+
+</main>
+
+<button class="nav prev" id="prev" aria-label="Precedente">←</button>
+<button class="nav next" id="next" aria-label="Successiva">→</button>
+
+<div class="progress" id="progress" aria-hidden="true">
+  <div class="line"></div><div class="dot" id="dot"></div><div class="label" id="label"></div><div class="hit" id="hit"></div>
+</div>
+
+<script>
+(() => {
+  const slides = [...document.querySelectorAll('.slide')];
+  const dot = document.getElementById('dot'), label = document.getElementById('label');
+  const prev = document.getElementById('prev'), next = document.getElementById('next');
+  let i = 0, lock = false;
+
+  const pct = n => slides.length > 1 ? n / (slides.length - 1) : 0;
+
+  function go(n, force) {
+    n = Math.max(0, Math.min(slides.length - 1, n));
+    if (n === i && !force) return;
+    i = n;
+    slides.forEach((s, k) => {
+      s.classList.toggle('is-active', k === i);
+      s.classList.toggle('is-past', k < i);
+    });
+    const p = pct(i) * 100;
+    // tieni il pallino/etichetta dentro i bordi
+    dot.style.left = p + '%';
+    label.style.left = Math.min(92, Math.max(8, p)) + '%';
+    label.textContent = slides[i].dataset.label || '';
+    document.body.classList.toggle('has-full', slides[i].hasAttribute('data-full'));
+    prev.disabled = i === 0; next.disabled = i === slides.length - 1;
+    history.replaceState(null, '', '#' + (i + 1));
+  }
+
+  // tastiera
+  addEventListener('keydown', e => {
+    if (['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)) { e.preventDefault(); go(i + 1); }
+    if (['ArrowLeft','ArrowUp','PageUp'].includes(e.key)) { e.preventDefault(); go(i - 1); }
+    if (e.key === 'Home') go(0);
+    if (e.key === 'End') go(slides.length - 1);
+  });
+  prev.onclick = () => go(i - 1); next.onclick = () => go(i + 1);
+
+  // rotella (con anti-rimbalzo)
+  addEventListener('wheel', e => {
+    if (lock) return;
+    const d = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+    if (Math.abs(d) < 12) return;
+    lock = true; go(i + (d > 0 ? 1 : -1)); setTimeout(() => lock = false, 650);
+  }, { passive: true });
+
+  // swipe touch / trascinamento
+  let x0 = null, y0 = null;
+  addEventListener('pointerdown', e => { x0 = e.clientX; y0 = e.clientY; });
+  addEventListener('pointerup', e => {
+    if (x0 === null) return;
+    const dx = e.clientX - x0, dy = e.clientY - y0; x0 = null;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) go(i + (dx < 0 ? 1 : -1));
+    else if (Math.abs(dy) > 60 && Math.abs(dy) > Math.abs(dx)) go(i + (dy < 0 ? 1 : -1));
+    else if (Math.abs(dx) < 8 && !e.target.closest('button,.hit')) go(i + (e.clientX > innerWidth / 2 ? 1 : -1)); // tap sui lati
+  });
+
+  // click sulla linea = salta a quella slide
+  document.getElementById('hit').addEventListener('click', e => {
+    const r = e.currentTarget.getBoundingClientRect();
+    go(Math.round((e.clientX - r.left) / r.width * (slides.length - 1)));
+  });
+
+  const start = parseInt(location.hash.slice(1), 10);
+  go(Number.isFinite(start) ? start - 1 : 0, true);
+})();
+</script>
+</body>
+</html>
