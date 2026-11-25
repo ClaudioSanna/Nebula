@@ -7,8 +7,8 @@ La cartella `app/` va messa online su un indirizzo https. Opzioni semplici:
 - **Netlify Drop** (app.netlify.com/drop): trascini la cartella `app/` e ottieni un link.
 - **GitHub Pages**: Settings → Pages → branch e cartella `/app` (su un repository privato richiede un piano a pagamento).
 
-## Mettere l'icona sul telefono
-- **iPhone (Safari):** apri il link → Condividi → "Aggiungi alla schermata Home".
-- **Android (Chrome):** apri il link → menu ⋮ → "Installa app" o "Aggiungi a schermata Home".
+## Mettere l'icona sul telefono (Android, Samsung Galaxy S24 FE)
+- **Chrome:** apri il link → menu ⋮ → "Installa app" (o "Aggiungi a schermata Home") → conferma.
+- **Samsung Internet:** apri il link → menu ≡ → "Aggiungi pagina a" → "Schermata Home".
 
 L'icona (fiamma Blaze su arancio) è in `icons/icon.svg`; i PNG si rigenerano da lì.
