@@ -36,7 +36,7 @@ Le lezioni dei lunedì e dei mercoledì seguono lo stesso schema, così gli alli
 
 Il venerdì cambia la parte centrale per fare spazio allo sparring (vedi sezione 5).
 
-**Riscaldamento tipo (15')** – 3' corda o corsetta leggera · 2' mobilità articolare (caviglie, anche, spalle, polsi, collo) · 3' skip, calciate dietro, ginocchia alte, affondi dinamici · 3' shadow boxing lento sulla guardia · 4' attivazione: 2 × 10 flessioni sulle ginocchia o piene, 2 × 15 squat, 2 × 20" plank.
+**Riscaldamento tipo (15')** – 3' corda o corsetta leggera · 2' mobilità articolare (caviglie, anche, spalle, polsi, collo) · 3' skip, calciate dietro, ginocchia alte, affondi dinamici · 3' shadow boxing lento sulla guardia · 4' attivazione: 2 × 10 push-up sulle ginocchia o normali, 2 × 15 squat, 2 × 20" plank.
 
 **Defaticamento tipo (8')** – 2' camminata e respirazione · 6' stretching statico (adduttori, quadricipiti, flessori dell'anca, polpacci, spalle, collo), 20-30" per posizione.
 
@@ -73,7 +73,7 @@ Il venerdì cambia la parte centrale per fare spazio allo sparring (vedi sezione
 | 2' | Fare | Mobilità: caviglie, anche, spalle, polsi, collo |
 | 3' | Fare | Skip, calciate dietro, ginocchia alte, affondi |
 | 3' | Fare | Shadow boxing lento sulla guardia |
-| 3' | Fare | Attivazione: 2×10 flessioni, 2×15 squat, 2×20" plank |
+| 3' | Fare | Attivazione: 2×10 push-up, 2×15 squat, 2×20" plank |
 | 1' | Passaggi | Cambi e acqua |
 
 ### Tecnica · 30'
@@ -182,7 +182,7 @@ Timer dell'artefatto: 4 round da 2', pausa 30".
 | 3' | Fare | Mobilità d'anca: cerchi d'anca, oscillazioni della gamba |
 | 3' | Fare | Skip, calciate dietro, ginocchia alte, affondi |
 | 2' | Fare | Shadow boxing lento |
-| 3' | Fare | Attivazione: flessioni, squat, plank |
+| 3' | Fare | Attivazione: push-up, squat, plank |
 | 1' | Passaggi | Cambi e acqua |
 
 ### Tecnica · 30'
@@ -285,7 +285,7 @@ Timer dell'artefatto: 4 round da 2', pausa 30".
 | 2' | Fare | Mobilità articolare |
 | 3' | Fare | Skip, calciate dietro, affondi |
 | 2' | Fare | Shadow boxing a ritmo crescente |
-| 3' | Fare | Attivazione: flessioni, squat, plank |
+| 3' | Fare | Attivazione: push-up, squat, plank |
 | 2' | Passaggi | Cambi e acqua |
 
 ### Ripasso e combinazioni · 20'
@@ -352,7 +352,7 @@ Timer dell'artefatto: 6 round da 2', pausa 1'.
 | Tempo | Tipo | Cosa |
 |---:|---|---|
 | 1' | Spiegare | Spiegare il circuito |
-| 4' | Fare | 2 giri da 2': plank 30" · squat 40" · flessioni 20" · riposo 30" |
+| 4' | Fare | 2 giri da 2': plank 30" · squat 40" · push-up 20" · riposo 30" |
 | 2' | Passaggi | Acqua |
 
 ### Defaticamento · 8'
