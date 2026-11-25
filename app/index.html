@@ -3,34 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#FFF4EC" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#1F120C" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#0B0B10">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Blaze Muay Thai">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <title>Blaze Muay Thai</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap">
 <style>
-/* Layout: barra del tempo da 90' in alto, blocchi apribili sotto, timer "In sala" a schermo intero */
+/* Layout: barra del tempo da 90' in alto, blocchi apribili sotto, timer "In sala" a schermo intero. Look scuro deliberato: nero, giallo, blu */
 :root{
-  --bg:#FFF4EC; --surface:#FFFFFF; --ink:#4D2D1C; --muted:#8A6652; --line:#F0D9C8;
-  --accent:#E4600F; --accent-ink:#FFFFFF; --sky:#B5F7FF; --sky-ink:#14505A;
-  --c-soft:#E9D3C3; --c-warm:#F5B98C; --c-tech:#E4600F; --c-drill:#B5441B; --c-cond:#7A3A1F; --c-spar:#2C1A12;
-  --ok:#2E7D32; --font-display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
-  --font-body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --bg:#0B0B10; --surface:#16161D; --ink:#F5F5F7; --muted:#A3A3B0; --line:#2A2A35;
+  --accent:#FFC800; --accent-ink:#0B0B10; --sky:#1F6BFF; --sky-ink:#FFFFFF;
+  --c-soft:#3A3A46; --c-warm:#8A7420; --c-tech:#FFC800; --c-drill:#1F6BFF; --c-cond:#1546A6; --c-spar:#FFFFFF;
+  --ok:#5BD38A; --font-display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --font-body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif; color-scheme:dark;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#1F120C; --surface:#2C1A12; --ink:#FFE6D6; --muted:#C9A58F; --line:#4A2E20;
-  --accent:#FF8A3D; --accent-ink:#2C1A12; --sky:#0F3C44; --sky-ink:#B5F7FF;
-  --c-soft:#5A3F30; --c-warm:#B5683A; --c-tech:#FF8A3D; --c-drill:#E0662B; --c-cond:#B5441B; --c-spar:#FFE6D6; --ok:#7BCF80; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#1F120C; --surface:#2C1A12; --ink:#FFE6D6; --muted:#C9A58F; --line:#4A2E20;
-  --accent:#FF8A3D; --accent-ink:#2C1A12; --sky:#0F3C44; --sky-ink:#B5F7FF;
-  --c-soft:#5A3F30; --c-warm:#B5683A; --c-tech:#FF8A3D; --c-drill:#E0662B; --c-cond:#B5441B; --c-spar:#FFE6D6; --ok:#7BCF80; color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.5;
   padding-block:16px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -65,11 +56,9 @@ button{font:inherit;color:inherit;cursor:pointer}
 .timeline{display:flex;height:56px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
 .seg{border:0;border-right:2px solid var(--bg);padding:0;min-width:0;position:relative;display:flex;align-items:flex-end;justify-content:center;color:#fff;font-size:12px;font-weight:700;padding-bottom:5px;background:var(--c)}
 .seg:last-child{border-right:0}
-.seg[data-k="soft"]{--c:var(--c-soft);color:var(--ink)}.seg[data-k="warm"]{--c:var(--c-warm);color:#2C1A12}
+.seg[data-k="soft"]{--c:var(--c-soft);color:var(--ink)}.seg[data-k="warm"]{--c:var(--c-warm);color:#fff}
 .seg[data-k="tech"]{--c:var(--c-tech);color:var(--accent-ink)}.seg[data-k="drill"]{--c:var(--c-drill);color:#fff}
-.seg[data-k="cond"]{--c:var(--c-cond);color:#fff}.seg[data-k="spar"]{--c:var(--c-spar)}
-:root[data-theme="dark"] .seg[data-k="spar"]{color:#2C1A12}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .seg[data-k="spar"]{color:#2C1A12}}
+.seg[data-k="cond"]{--c:var(--c-cond);color:#fff}.seg[data-k="spar"]{--c:var(--c-spar);color:#0B0B10}
 .seg[aria-pressed="true"]{outline:3px solid var(--ink);outline-offset:-3px}
 .scale{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;margin-top:-10px}
 
@@ -119,15 +108,17 @@ dt{font-weight:700}dd{margin:0;color:var(--muted)}
 .stage-mid .k{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .stage-mid h2{font-size:clamp(34px,10vw,56px)}
 .clock{font-family:var(--font-display);font-weight:700;font-size:clamp(120px,38vw,220px);line-height:.9;font-variant-numeric:tabular-nums}
+.clock{color:var(--accent)}
 .stage.rest{background:var(--sky);color:var(--sky-ink)}
-.stage.rest .k{color:var(--sky-ink)}
+.stage.rest .k,.stage.rest .sub,.stage.rest .stage-tip{color:var(--sky-ink)}
+.stage.rest .clock{color:#fff}
 .stage-tip{font-size:15px;color:var(--muted);max-width:30em;margin:0 auto}
 .stage-bar{display:grid;grid-template-columns:1fr 1.6fr 1fr;gap:10px}
 .stage-bar button{min-height:64px;border-radius:16px;border:1px solid var(--line);background:var(--surface);font-weight:700;font-size:17px}
 .stage-bar .go{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
-<style>html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}body{margin:0}</style>
+<style>html{background:#0B0B10;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}body{margin:0}</style>
 </head>
 <body>
 
@@ -138,7 +129,6 @@ dt{font-weight:700}dd{margin:0;color:var(--muted)}
         <div class="eyebrow">Muay Thai · principianti e amatori</div>
         <h1>Settimana tipo</h1>
       </div>
-      <button class="icon-btn" id="themeBtn" aria-label="Cambia tema">◐</button>
     </div>
     <p class="sub">3 lezioni da 90 minuti · lunedì, mercoledì, venerdì · venerdì sparring tecnico leggero. Si parte mercoledì 2 dicembre 2026.</p>
   </header>
@@ -318,10 +308,6 @@ document.addEventListener('change',e=>{
     $('#cnt').textContent=n+'/'+boxes.length; $('#bar').style.width=(n/boxes.length*100)+'%';
   }
 });
-$('#themeBtn').onclick=()=>{
-  const r=document.documentElement, dark=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
-  r.dataset.theme=dark?'light':'dark';
-};
 addEventListener('hashchange',()=>{const h=location.hash.slice(1); if(TABS.some(t=>t[0]===h)&&h!==current){current=h;render();}});
 
 /* ---- Modalità in sala ---- */
