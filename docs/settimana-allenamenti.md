@@ -22,7 +22,7 @@ Principio guida: **prima il corpo che capisce, poi la forza**. Pochi gesti, ripe
 
 ## 2. Schema fisso di ogni lezione (90')
 
-Le lezioni dei lunedì e dei mercoledì seguono lo stesso schema, così gli allievi sanno cosa aspettarsi.
+Le lezioni dei lunedì e dei mercoledì seguono lo stesso schema, così gli allievi sanno cosa aspettarsi. Nelle sezioni 3, 4 e 5 ogni blocco è diviso in **spiegare**, **fare** e **passaggi** (acqua, cambi, formare le coppie, prendere e riordinare i colpitori), così sai quanto tempo hai per ciascuna cosa. I totali dei blocchi non cambiano.
 
 | Blocco | Durata |
 |---|---|
@@ -34,7 +34,7 @@ Le lezioni dei lunedì e dei mercoledì seguono lo stesso schema, così gli alli
 | Defaticamento e stretching | 8' |
 | **Totale** | **90'** |
 
-Il venerdì cambia la parte centrale per fare spazio allo sparring (vedi lezione 3).
+Il venerdì cambia la parte centrale per fare spazio allo sparring (vedi sezione 5).
 
 **Riscaldamento tipo (15')** – 3' corda o corsetta leggera · 2' mobilità articolare (caviglie, anche, spalle, polsi, collo) · 3' skip, calciate dietro, ginocchia alte, affondi dinamici · 3' shadow boxing lento sulla guardia · 4' attivazione: 2 × 10 flessioni sulle ginocchia o piene, 2 × 15 squat, 2 × 20" plank.
 
@@ -46,54 +46,326 @@ Il venerdì cambia la parte centrale per fare spazio allo sparring (vedi lezione
 
 ## 3. Lezione 1 · Lunedì · Base e pugni
 
-**Obiettivo:** guardia stabile, posizione dei piedi, spostamenti, i tre pugni base e una difesa semplice.
+**Obiettivo:** Guardia stabile, posizione dei piedi, spostamenti, i tre pugni base e una difesa semplice.
 
-| Blocco | Contenuto |
-|---|---|
-| 0-5' | Presentazione, regole di sicurezza, chi ha infortuni o limitazioni |
-| 5-20' | Riscaldamento tipo |
-| 20-50' (30') | **Tecnica.** (1) Guardia e posizione: piedi a larghezza spalle, passo avanti di mezzo metro, peso 50/50, mento basso, mani alte. 5'. (2) Spostamenti: avanti, indietro, laterale, senza incrociare i piedi. 5'. (3) **Jab** (pugno anticipato) 5': spinta dal piede posteriore, ritorno veloce alla guardia. (4) **Cross** (pugno diretto posteriore) 5': rotazione di piede, anca e spalla. (5) **Hook** (gancio) 5': gomito alto, rotazione del corpo, non del braccio solo. (6) Combinazione 1-2 e 1-2-hook a vuoto, 5' |
-| 50-70' (20') | **Drill.** In coppia, uno ai colpitori e uno colpisce, 3 round da 2' con 30" di cambio. Primo round: solo jab e 1-2 lenti. Secondo: 1-2-hook. Terzo: libero sulle combinazioni apprese. L'istruttore passa e corregge una cosa a persona |
-| 70-82' (12') | **Condizionamento.** 3 giri: corda 1' · plank 30" · affondi alternati 40" · addominali a "bicicletta" 40" · riposo 30" |
-| 82-90' (8') | Defaticamento tipo e feedback finale |
+**Ripartizione dei 90':** spiegare 15' · fare 60' · passaggi, acqua e cambi 15'.
 
-**Errori comuni da correggere:** mani che scendono dopo il colpo, tirare il pugno solo con il braccio, piedi incrociati negli spostamenti, trattenere il respiro.
+### Accoglienza e regole · 5'
+
+*Spiegare 3' · fare 0' · passaggi 2'*
+
+| Tempo | Tipo | Cosa |
+|---:|---|---|
+| 2' | Passaggi | Saluto in fila e presentazione |
+| 3' | Spiegare | Regole di sicurezza, chi ha infortuni o limitazioni |
+
+**Punti da curare:**
+
+- Saluto con un breve inchino (wai)
+
+### Riscaldamento · 15'
+
+*Spiegare 0' · fare 14' · passaggi 1'*
+
+| Tempo | Tipo | Cosa |
+|---:|---|---|
+| 3' | Fare | Corda o corsetta leggera |
+| 2' | Fare | Mobilità: caviglie, anche, spalle, polsi, collo |
+| 3' | Fare | Skip, calciate dietro, ginocchia alte, affondi |
+| 3' | Fare | Shadow boxing lento sulla guardia |
+| 3' | Fare | Attivazione: 2×10 flessioni, 2×15 squat, 2×20" plank |
+| 1' | Passaggi | Cambi e acqua |
+
+### Tecnica · 30'
+
+*Spiegare 6' · fare 22' · passaggi 2'*
+
+| Tempo | Tipo | Cosa |
+|---:|---|---|
+| 1' | Spiegare | Guardia e posizione: spiegazione e dimostrazione |
+| 4' | Fare | Guardia e posizione: prova |
+| 1' | Spiegare | Spostamenti: spiegazione e dimostrazione |
+| 3' | Fare | Spostamenti: prova |
+| 1' | Spiegare | Jab: spiegazione e dimostrazione |
+| 4' | Fare | Jab: prova |
+| 1' | Spiegare | Cross: spiegazione e dimostrazione |
+| 4' | Fare | Cross: prova |
+| 1' | Spiegare | Hook: spiegazione e dimostrazione |
+| 4' | Fare | Hook: prova |
+| 1' | Spiegare | Combinazioni 1-2 e 1-2-hook: spiegazione e dimostrazione |
+| 3' | Fare | Combinazioni 1-2 e 1-2-hook: prova |
+| 2' | Passaggi | Acqua e passaggi |
+
+**Punti da curare:**
+
+- Guardia: piedi a larghezza spalle, passo avanti di mezzo metro, peso 50/50, mento basso, mani alte
+- Spostamenti: avanti, indietro, laterale, senza incrociare i piedi
+- Jab: spinta dal piede posteriore, ritorno veloce alla guardia
+- Cross: rotazione di piede, anca e spalla
+- Hook: gomito alto, ruota il corpo, non solo il braccio
+
+### Drill ai colpitori · 20'
+
+*Spiegare 4' · fare 8' · passaggi 8'*
+
+| Tempo | Tipo | Cosa |
+|---:|---|---|
+| 3' | Passaggi | Formare le coppie e prendere i colpitori |
+| 2' | Spiegare | Spiegare il drill e l'obiettivo dei round |
+| 8' | Fare | 4 round da 2' (A, B, A, B) |
+| 1'30" | Passaggi | Cambio ruolo tra i round: 3 × 30" |
+| 2' | Spiegare | Correzioni, una per coppia |
+| 2' | Passaggi | Acqua |
+| 1'30" | Passaggi | Riordino dei colpitori |
+
+Timer dell'artefatto: 4 round da 2', pausa 30".
+
+**Punti da curare:**
+
+- Coppie: uno tiene i colpitori, uno colpisce, cambio ruolo a ogni round
+- Round 1: solo jab e 1-2 lenti
+- Round 2: 1-2-hook
+- Round 3: libero sulle combinazioni apprese
+- Round 4: libero, ritmo un po' più alto
+
+### Condizionamento · 12'
+
+*Spiegare 1' · fare 9' · passaggi 2'*
+
+| Tempo | Tipo | Cosa |
+|---:|---|---|
+| 1' | Spiegare | Spiegare il circuito |
+| 9' | Fare | 3 giri da 3': corda 1' · plank 30" · affondi alternati 40" · bicicletta addominale 40" · riposo 30" |
+| 2' | Passaggi | Cambi e acqua |
+
+### Defaticamento · 8'
+
+*Spiegare 1' · fare 7' · passaggi 0'*
+
+| Tempo | Tipo | Cosa |
+|---:|---|---|
+| 2' | Fare | Camminata e respirazione |
+| 5' | Fare | Stretching statico, 20-30" a posizione |
+| 1' | Spiegare | Feedback e saluto: una cosa positiva e una correzione a testa |
+
+**Punti da curare:**
+
+- Adduttori, quadricipiti, flessori dell'anca, polpacci, spalle, collo
+
+**Errori comuni:** Mani che scendono dopo il colpo · pugno solo di braccio · piedi incrociati negli spostamenti · respiro trattenuto.
 
 ---
 
 ## 4. Lezione 2 · Mercoledì · Calci e ginocchia
 
-**Obiettivo:** equilibrio e rotazione dell'anca, i calci base, la ginocchiata diretta, la difesa dal calcio.
+**Obiettivo:** Equilibrio e rotazione dell'anca, i calci base, la ginocchiata diretta, la difesa dal calcio.
 
-| Blocco | Contenuto |
-|---|---|
-| 0-5' | Saluto, ripasso rapido della lezione precedente |
-| 5-20' | Riscaldamento tipo, con più mobilità d'anca (cerchi d'anca, oscillazioni della gamba) |
-| 20-50' (30') | **Tecnica.** (1) **Teep** (calcio frontale a spinta) 7': ginocchio su, anca avanti, spinta con la pianta del piede, equilibrio. (2) **Calcio circolare** (*tae*) 10': pivot sul piede d'appoggio, rotazione dell'anca, braccio opposto che accompagna; prima a vuoto, poi sul sacco. Colpire con lo stinco, non con il piede. (3) **Ginocchiata diretta** (*khao*) 5': anche avanti, busto leggermente indietro, mani che guidano. (4) **Difesa dal calcio (check)** 8': sollevare lo stinco davanti al calcio in arrivo, da fermi e poi con un partner che calcia lento |
-| 50-70' (20') | **Drill.** In coppia, colpitori e sacco, 3 round da 2' con 30" di cambio. Primo round: teep e calcio circolare. Secondo: combinazioni pugno + calcio (1-2-calcio). Terzo: aggiungere la ginocchiata. Alternare gamba destra e sinistra |
-| 70-82' (12') | **Condizionamento.** 3 giri: squat con salto 30" · plank laterale 20" per lato · calci a vuoto alternati 40" · mountain climber 30" · riposo 30" |
-| 82-90' (8') | Defaticamento tipo con più enfasi su anche e adduttori |
+**Ripartizione dei 90':** spiegare 17' · fare 58'30" · passaggi, acqua e cambi 14'30".
 
-**Errori comuni:** calcio dal solo ginocchio senza rotazione dell'anca, piede d'appoggio che non ruota, busto che si piega troppo indietro, guardia che crolla durante il calcio.
+### Accoglienza e ripasso · 5'
+
+*Spiegare 4' · fare 0' · passaggi 1'*
+
+| Tempo | Tipo | Cosa |
+|---:|---|---|
+| 1' | Passaggi | Saluto in fila |
+| 3' | Spiegare | Ripasso rapido della lezione precedente |
+| 1' | Spiegare | Domande |
+
+### Riscaldamento · 15'
+
+*Spiegare 0' · fare 14' · passaggi 1'*
+
+| Tempo | Tipo | Cosa |
+|---:|---|---|
+| 3' | Fare | Corda o corsetta leggera |
+| 3' | Fare | Mobilità d'anca: cerchi d'anca, oscillazioni della gamba |
+| 3' | Fare | Skip, calciate dietro, ginocchia alte, affondi |
+| 2' | Fare | Shadow boxing lento |
+| 3' | Fare | Attivazione: flessioni, squat, plank |
+| 1' | Passaggi | Cambi e acqua |
+
+### Tecnica · 30'
+
+*Spiegare 7' · fare 21' · passaggi 2'*
+
+| Tempo | Tipo | Cosa |
+|---:|---|---|
+| 2' | Spiegare | Teep: spiegazione e dimostrazione |
+| 4' | Fare | Teep: prova |
+| 2' | Spiegare | Calcio circolare: spiegazione e dimostrazione |
+| 7' | Fare | Calcio circolare: prova a vuoto e sul sacco |
+| 1' | Spiegare | Ginocchiata diretta: spiegazione e dimostrazione |
+| 4' | Fare | Ginocchiata diretta: prova |
+| 2' | Spiegare | Difesa dal calcio (check): spiegazione e dimostrazione |
+| 6' | Fare | Difesa dal calcio (check): prova con partner |
+| 2' | Passaggi | Acqua e passaggi |
+
+**Punti da curare:**
+
+- Teep (calcio frontale a spinta): ginocchio su, anca avanti, spinta con la pianta del piede, equilibrio
+- Calcio circolare (tae): pivot sul piede d'appoggio, rotazione dell'anca, braccio opposto che accompagna. Colpisci con lo stinco, non con il piede
+- Ginocchiata diretta (khao): anche avanti, busto leggermente indietro, mani che guidano
+- Check: alza lo stinco davanti al calcio in arrivo, prima da fermo, poi con un partner che calcia lento
+
+### Drill ai colpitori · 20'
+
+*Spiegare 4' · fare 8' · passaggi 8'*
+
+| Tempo | Tipo | Cosa |
+|---:|---|---|
+| 3' | Passaggi | Formare le coppie e prendere i colpitori |
+| 2' | Spiegare | Spiegare il drill e l'obiettivo dei round |
+| 8' | Fare | 4 round da 2' (A, B, A, B) |
+| 1'30" | Passaggi | Cambio ruolo tra i round: 3 × 30" |
+| 2' | Spiegare | Correzioni, una per coppia |
+| 2' | Passaggi | Acqua |
+| 1'30" | Passaggi | Riordino dei colpitori |
+
+Timer dell'artefatto: 4 round da 2', pausa 30".
+
+**Punti da curare:**
+
+- Round 1: teep e calcio circolare
+- Round 2: combinazioni pugno + calcio (1-2-calcio)
+- Round 3: aggiungi la ginocchiata
+- Round 4: libero, alternando gamba destra e sinistra
+
+### Condizionamento · 12'
+
+*Spiegare 1' · fare 8'30" · passaggi 2'30"*
+
+| Tempo | Tipo | Cosa |
+|---:|---|---|
+| 1' | Spiegare | Spiegare il circuito |
+| 8'30" | Fare | 3 giri da 2'50": squat con salto 30" · plank laterale 20" per lato · calci a vuoto 40" · mountain climber 30" · riposo 30" |
+| 2'30" | Passaggi | Cambi e acqua |
+
+### Defaticamento · 8'
+
+*Spiegare 1' · fare 7' · passaggi 0'*
+
+| Tempo | Tipo | Cosa |
+|---:|---|---|
+| 2' | Fare | Camminata e respirazione |
+| 5' | Fare | Stretching statico, 20-30" a posizione |
+| 1' | Spiegare | Feedback e saluto: una cosa positiva e una correzione a testa |
+
+**Punti da curare:**
+
+- Più attenzione a anche e adduttori
+
+**Errori comuni:** Calcio dal solo ginocchio senza anca · piede d'appoggio che non ruota · busto troppo indietro · guardia che crolla durante il calcio.
 
 ---
 
 ## 5. Lezione 3 · Venerdì · Combinazioni e sparring tecnico
 
-Il venerdì il programma cambia: meno condizionamento, più tempo per combinare e per lo sparring.
+**Obiettivo:** Unire quanto imparato, conoscere il clinch di base, provare lo sparring in sicurezza.
 
-**Obiettivo:** unire quanto imparato, conoscere il clinch di base, provare lo sparring in sicurezza.
+**Ripartizione dei 90':** spiegare 16' · fare 52' · passaggi, acqua e cambi 22'.
 
-| Blocco | Durata | Contenuto |
-|---|---|---|
-| Accoglienza e regole di sparring | 5' | Saluto e richiamo delle regole di sicurezza (vedi sezione 6) |
-| Riscaldamento | 15' | Tipo, con 2' di shadow boxing a ritmo crescente |
-| Ripasso e combinazioni | 20' | 3 combinazioni a vuoto e ai colpitori, 2' l'una: **1-2-calcio circolare**, **jab-teep-cross**, **1-2-hook-calcio basso**. Poi 4' di difesa: parata, schivata, check, in coppia a ritmo lento |
-| Clinch, introduzione | 10' | Presa del collo (*plum*) e controllo del partner, spinta e tirata con i polsi, posizione di base. **Nessuna proiezione e nessuna ginocchiata piena**: solo posizione, equilibrio e respirazione. 3 turni da 3' tra compagni di taglia simile |
-| **Sparring tecnico leggero** | 25' | 6 round da 2' con 1' di pausa (18'), più 7' di istruzioni, cambio coppie e feedback. Contatto 20-30%, solo tecnica, ritmo lento. Tema del round: 1° solo pugni · 2° pugni e teep · 3° pugni e calci al corpo · 4° libero tecnico · 5° e 6° ancora libero tecnico con nuovo partner |
-| Condizionamento | 7' | 2 giri: plank 30" · squat 40" · flessioni 20" · riposo 30" |
-| Defaticamento | 8' | Tipo, con feedback di gruppo |
-| **Totale** | **90'** | |
+### Accoglienza e regole di sparring · 5'
+
+*Spiegare 2' · fare 0' · passaggi 3'*
+
+| Tempo | Tipo | Cosa |
+|---:|---|---|
+| 1' | Passaggi | Saluto in fila |
+| 2' | Spiegare | Regole di sicurezza dello sparring |
+| 2' | Passaggi | Controllo delle protezioni |
+
+### Riscaldamento · 15'
+
+*Spiegare 0' · fare 13' · passaggi 2'*
+
+| Tempo | Tipo | Cosa |
+|---:|---|---|
+| 3' | Fare | Corda o corsetta leggera |
+| 2' | Fare | Mobilità articolare |
+| 3' | Fare | Skip, calciate dietro, affondi |
+| 2' | Fare | Shadow boxing a ritmo crescente |
+| 3' | Fare | Attivazione: flessioni, squat, plank |
+| 2' | Passaggi | Cambi e acqua |
+
+### Ripasso e combinazioni · 20'
+
+*Spiegare 5' · fare 10' · passaggi 5'*
+
+| Tempo | Tipo | Cosa |
+|---:|---|---|
+| 2' | Passaggi | Prendere i colpitori e formare le coppie |
+| 3' | Spiegare | Spiegare le 3 combinazioni (1' ciascuna) |
+| 6' | Fare | 3 combinazioni × 2' (a vuoto e ai colpitori) |
+| 1' | Passaggi | Cambi |
+| 1' | Spiegare | Difesa: spiegazione e dimostrazione |
+| 4' | Fare | Difesa in coppia a ritmo lento: parata, schivata, check |
+| 1' | Spiegare | Correzioni |
+| 2' | Passaggi | Acqua |
+
+**Punti da curare:**
+
+- 1-2-calcio circolare
+- Jab-teep-cross
+- 1-2-hook-calcio basso
+
+### Clinch, introduzione · 10'
+
+*Spiegare 2' · fare 6' · passaggi 2'*
+
+| Tempo | Tipo | Cosa |
+|---:|---|---|
+| 2' | Spiegare | Spiegare presa e controllo |
+| 6' | Fare | 2 turni da 3' tra compagni di taglia simile |
+| 1' | Passaggi | Cambio coppie |
+| 1' | Passaggi | Acqua |
+
+**Punti da curare:**
+
+- Presa del collo (plum) e controllo del partner
+- Spinta e tirata con i polsi, posizione di base
+- Nessuna proiezione e nessuna ginocchiata piena: solo posizione, equilibrio e respirazione
+
+### Sparring tecnico leggero · 25'
+
+*Spiegare 5' · fare 12' · passaggi 8'*
+
+| Tempo | Tipo | Cosa |
+|---:|---|---|
+| 3' | Passaggi | Protezioni e coppie |
+| 2' | Spiegare | Istruzioni sui temi dei round |
+| 12' | Fare | 6 round da 2' |
+| 5' | Passaggi | 5 pause da 1': cambio compagno ogni due round, correzione breve |
+| 3' | Spiegare | Feedback finale |
+
+Timer dell'artefatto: 6 round da 2', pausa 1'.
+
+**Punti da curare:**
+
+- Contatto 20-30%, solo tecnica, ritmo lento
+- Round 1 solo pugni · 2 pugni e teep · 3 pugni e calci al corpo · 4 libero tecnico · 5 e 6 libero tecnico con nuovo partner
+
+### Condizionamento · 7'
+
+*Spiegare 1' · fare 4' · passaggi 2'*
+
+| Tempo | Tipo | Cosa |
+|---:|---|---|
+| 1' | Spiegare | Spiegare il circuito |
+| 4' | Fare | 2 giri da 2': plank 30" · squat 40" · flessioni 20" · riposo 30" |
+| 2' | Passaggi | Acqua |
+
+### Defaticamento · 8'
+
+*Spiegare 1' · fare 7' · passaggi 0'*
+
+| Tempo | Tipo | Cosa |
+|---:|---|---|
+| 2' | Fare | Camminata e respirazione |
+| 5' | Fare | Stretching statico, 20-30" a posizione |
+| 1' | Spiegare | Feedback e saluto: una cosa positiva e una correzione a testa |
+
+**Errori comuni:** Colpire troppo forte · abbassare la guardia dopo ogni combinazione · dimenticare di respirare · partner troppo diversi per taglia o livello.
 
 ---
 

@@ -72,6 +72,16 @@ button{font:inherit;color:inherit;cursor:pointer}
 .min{font-family:var(--font-display);font-size:26px;font-weight:700;font-variant-numeric:tabular-nums}
 .body{padding:2px 16px 16px 40px;display:grid;gap:10px}
 .body ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.tag{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:99px;white-space:nowrap}
+.parts .tag{text-align:center}
+.tag.S{background:var(--sky);color:var(--sky-ink)}.tag.F{background:var(--accent);color:var(--accent-ink)}.tag.P{background:var(--c-soft);color:var(--ink)}
+.parts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.parts li{display:grid;grid-template-columns:86px 1fr auto;gap:10px;align-items:start}
+.parts li span:nth-child(2){min-width:0}
+.parts b{font-family:var(--font-display);font-size:20px;font-variant-numeric:tabular-nums;line-height:1.2}
+.split{display:flex;gap:8px;flex-wrap:wrap}
+.split .tag{font-size:12px;padding:4px 10px}
+.stage-parts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 .errors{background:var(--bg);border-radius:10px;padding:10px 12px;font-size:14px}
 .errors b{color:var(--accent)}
 .note{background:var(--sky);color:var(--sky-ink);border-radius:12px;padding:12px 14px;font-size:14px}
@@ -156,40 +166,7 @@ dt{font-weight:700}dd{margin:0;color:var(--muted)}
 </div>
 
 <script>
-const LESSONS = {
-  lun: { tab:'Lun', day:'Lunedì', title:'Base e pugni', goal:'Guardia stabile, posizione dei piedi, spostamenti, i tre pugni base e una difesa semplice.', intensity:'Media', dow:1,
-    errors:'Mani che scendono dopo il colpo · pugno solo di braccio · piedi incrociati negli spostamenti · respiro trattenuto.',
-    blocks:[
-      {n:'Accoglienza e regole',m:5,k:'soft',i:['Saluto in fila con un breve inchino (wai)','Presentazione, regole di sicurezza','Chiedi chi ha infortuni o limitazioni']},
-      {n:'Riscaldamento',m:15,k:'warm',i:['3\' corda o corsetta leggera','2\' mobilità: caviglie, anche, spalle, polsi, collo','3\' skip, calciate dietro, ginocchia alte, affondi dinamici','3\' shadow boxing lento sulla guardia','4\' attivazione: 2×10 flessioni, 2×15 squat, 2×20" plank']},
-      {n:'Tecnica',m:30,k:'tech',i:['5\' Guardia e posizione: piedi a larghezza spalle, passo avanti di mezzo metro, peso 50/50, mento basso, mani alte','5\' Spostamenti: avanti, indietro, laterale, senza incrociare i piedi','5\' Jab: spinta dal piede posteriore, ritorno veloce alla guardia','5\' Cross: rotazione di piede, anca e spalla','5\' Hook: gomito alto, ruota il corpo, non solo il braccio','5\' Combinazioni 1-2 e 1-2-hook a vuoto']},
-      {n:'Drill ai colpitori',m:20,k:'drill',r:{n:3,w:120,p:30},i:['In coppia: uno ai colpitori, uno colpisce. 3 round da 2\' con 30" di cambio','Round 1: solo jab e 1-2 lenti','Round 2: 1-2-hook','Round 3: libero sulle combinazioni apprese','Passa tra le coppie: una correzione a persona']},
-      {n:'Condizionamento',m:12,k:'cond',i:['3 giri: corda 1\' · plank 30" · affondi alternati 40" · bicicletta addominale 40" · riposo 30"']},
-      {n:'Defaticamento',m:8,k:'soft',i:['2\' camminata e respirazione','6\' stretching statico: adduttori, quadricipiti, flessori dell\'anca, polpacci, spalle, collo (20-30" a posizione)','Feedback finale: un\'osservazione positiva e una correzione a testa']}
-    ]},
-  mer: { tab:'Mer', day:'Mercoledì', title:'Calci e ginocchia', goal:'Equilibrio e rotazione dell\'anca, i calci base, la ginocchiata diretta, la difesa dal calcio.', intensity:'Media-alta', dow:3,
-    errors:'Calcio dal solo ginocchio senza anca · piede d\'appoggio che non ruota · busto troppo indietro · guardia che crolla durante il calcio.',
-    blocks:[
-      {n:'Accoglienza e ripasso',m:5,k:'soft',i:['Saluto in fila','Ripasso rapido della lezione precedente']},
-      {n:'Riscaldamento',m:15,k:'warm',i:['Riscaldamento tipo del lunedì','Più mobilità d\'anca: cerchi d\'anca, oscillazioni della gamba']},
-      {n:'Tecnica',m:30,k:'tech',i:['7\' Teep (calcio frontale a spinta): ginocchio su, anca avanti, spinta con la pianta del piede, equilibrio','10\' Calcio circolare (tae): pivot sul piede d\'appoggio, rotazione dell\'anca, braccio opposto che accompagna. Prima a vuoto, poi sul sacco. Colpisci con lo stinco, non con il piede','5\' Ginocchiata diretta (khao): anche avanti, busto leggermente indietro, mani che guidano','8\' Difesa dal calcio (check): alza lo stinco davanti al calcio in arrivo, prima da fermo, poi con un partner che calcia lento']},
-      {n:'Drill ai colpitori',m:20,k:'drill',r:{n:3,w:120,p:30},i:['In coppia, colpitori e sacco. 3 round da 2\' con 30" di cambio','Round 1: teep e calcio circolare','Round 2: combinazioni pugno + calcio (1-2-calcio)','Round 3: aggiungi la ginocchiata','Alterna gamba destra e sinistra']},
-      {n:'Condizionamento',m:12,k:'cond',i:['3 giri: squat con salto 30" · plank laterale 20" per lato · calci a vuoto alternati 40" · mountain climber 30" · riposo 30"']},
-      {n:'Defaticamento',m:8,k:'soft',i:['Defaticamento tipo con più attenzione a anche e adduttori','Feedback finale a ognuno']}
-    ]},
-  ven: { tab:'Ven', day:'Venerdì', title:'Combinazioni e sparring', goal:'Unire quanto imparato, conoscere il clinch di base, provare lo sparring in sicurezza.', intensity:'Media · contatto 20-30%', dow:5,
-    note:'Prima settimana: venerdì 4 dicembre niente sparring. Il primo sparring leggero è venerdì 11 dicembre.',
-    errors:'Colpire troppo forte · abbassare la guardia dopo ogni combinazione · dimenticare di respirare · partner troppo diversi per taglia o livello.',
-    blocks:[
-      {n:'Accoglienza e regole di sparring',m:5,k:'soft',i:['Saluto in fila','Richiama le regole di sicurezza (scheda Sicurezza)']},
-      {n:'Riscaldamento',m:15,k:'warm',i:['Riscaldamento tipo','2\' di shadow boxing a ritmo crescente']},
-      {n:'Ripasso e combinazioni',m:20,k:'tech',i:['3 combinazioni a vuoto e ai colpitori, 2\' ciascuna: 1-2-calcio circolare · jab-teep-cross · 1-2-hook-calcio basso','4\' di difesa in coppia a ritmo lento: parata, schivata, check']},
-      {n:'Clinch, introduzione',m:10,k:'tech',i:['Presa del collo (plum) e controllo del partner','Spinta e tirata con i polsi, posizione di base','Nessuna proiezione e nessuna ginocchiata piena: solo posizione, equilibrio e respirazione','3 turni da 3\' tra compagni di taglia simile']},
-      {n:'Sparring tecnico leggero',m:25,k:'spar',r:{n:6,w:120,p:60},i:['6 round da 2\' con 1\' di pausa (18\'), più 7\' di istruzioni, cambio coppie e feedback','Contatto 20-30%, solo tecnica, ritmo lento','Round 1 solo pugni · 2 pugni e teep · 3 pugni e calci al corpo · 4 libero tecnico · 5 e 6 libero tecnico con nuovo partner','Cambia compagno ogni due round']},
-      {n:'Condizionamento',m:7,k:'cond',i:['2 giri: plank 30" · squat 40" · flessioni 20" · riposo 30"']},
-      {n:'Defaticamento',m:8,k:'soft',i:['Defaticamento tipo','Feedback di gruppo']}
-    ]}
-};
+const LESSONS = {"lun":{"tab":"Lun","day":"Lunedì","title":"Base e pugni","goal":"Guardia stabile, posizione dei piedi, spostamenti, i tre pugni base e una difesa semplice.","intensity":"Media","dow":1,"errors":"Mani che scendono dopo il colpo · pugno solo di braccio · piedi incrociati negli spostamenti · respiro trattenuto.","blocks":[{"n":"Accoglienza e regole","m":5,"k":"soft","p":[["Saluto in fila e presentazione",2,"P"],["Regole di sicurezza, chi ha infortuni o limitazioni",3,"S"]],"i":["Saluto con un breve inchino (wai)"]},{"n":"Riscaldamento","m":15,"k":"warm","p":[["Corda o corsetta leggera",3,"F"],["Mobilità: caviglie, anche, spalle, polsi, collo",2,"F"],["Skip, calciate dietro, ginocchia alte, affondi",3,"F"],["Shadow boxing lento sulla guardia",3,"F"],["Attivazione: 2×10 flessioni, 2×15 squat, 2×20\" plank",3,"F"],["Cambi e acqua",1,"P"]],"i":[]},{"n":"Tecnica","m":30,"k":"tech","p":[["Guardia e posizione: spiegazione e dimostrazione",1,"S"],["Guardia e posizione: prova",4,"F"],["Spostamenti: spiegazione e dimostrazione",1,"S"],["Spostamenti: prova",3,"F"],["Jab: spiegazione e dimostrazione",1,"S"],["Jab: prova",4,"F"],["Cross: spiegazione e dimostrazione",1,"S"],["Cross: prova",4,"F"],["Hook: spiegazione e dimostrazione",1,"S"],["Hook: prova",4,"F"],["Combinazioni 1-2 e 1-2-hook: spiegazione e dimostrazione",1,"S"],["Combinazioni 1-2 e 1-2-hook: prova",3,"F"],["Acqua e passaggi",2,"P"]],"i":["Guardia: piedi a larghezza spalle, passo avanti di mezzo metro, peso 50/50, mento basso, mani alte","Spostamenti: avanti, indietro, laterale, senza incrociare i piedi","Jab: spinta dal piede posteriore, ritorno veloce alla guardia","Cross: rotazione di piede, anca e spalla","Hook: gomito alto, ruota il corpo, non solo il braccio"]},{"n":"Drill ai colpitori","m":20,"k":"drill","r":{"n":4,"w":120,"p":30},"p":[["Formare le coppie e prendere i colpitori",3,"P"],["Spiegare il drill e l'obiettivo dei round",2,"S"],["4 round da 2' (A, B, A, B)",8,"F"],["Cambio ruolo tra i round: 3 × 30\"",1.5,"P"],["Correzioni, una per coppia",2,"S"],["Acqua",2,"P"],["Riordino dei colpitori",1.5,"P"]],"i":["Coppie: uno tiene i colpitori, uno colpisce, cambio ruolo a ogni round","Round 1: solo jab e 1-2 lenti","Round 2: 1-2-hook","Round 3: libero sulle combinazioni apprese","Round 4: libero, ritmo un po' più alto"]},{"n":"Condizionamento","m":12,"k":"cond","p":[["Spiegare il circuito",1,"S"],["3 giri da 3': corda 1' · plank 30\" · affondi alternati 40\" · bicicletta addominale 40\" · riposo 30\"",9,"F"],["Cambi e acqua",2,"P"]],"i":[]},{"n":"Defaticamento","m":8,"k":"soft","p":[["Camminata e respirazione",2,"F"],["Stretching statico, 20-30\" a posizione",5,"F"],["Feedback e saluto: una cosa positiva e una correzione a testa",1,"S"]],"i":["Adduttori, quadricipiti, flessori dell'anca, polpacci, spalle, collo"]}]},"mer":{"tab":"Mer","day":"Mercoledì","title":"Calci e ginocchia","goal":"Equilibrio e rotazione dell'anca, i calci base, la ginocchiata diretta, la difesa dal calcio.","intensity":"Media-alta","dow":3,"errors":"Calcio dal solo ginocchio senza anca · piede d'appoggio che non ruota · busto troppo indietro · guardia che crolla durante il calcio.","blocks":[{"n":"Accoglienza e ripasso","m":5,"k":"soft","p":[["Saluto in fila",1,"P"],["Ripasso rapido della lezione precedente",3,"S"],["Domande",1,"S"]],"i":[]},{"n":"Riscaldamento","m":15,"k":"warm","p":[["Corda o corsetta leggera",3,"F"],["Mobilità d'anca: cerchi d'anca, oscillazioni della gamba",3,"F"],["Skip, calciate dietro, ginocchia alte, affondi",3,"F"],["Shadow boxing lento",2,"F"],["Attivazione: flessioni, squat, plank",3,"F"],["Cambi e acqua",1,"P"]],"i":[]},{"n":"Tecnica","m":30,"k":"tech","p":[["Teep: spiegazione e dimostrazione",2,"S"],["Teep: prova",4,"F"],["Calcio circolare: spiegazione e dimostrazione",2,"S"],["Calcio circolare: prova a vuoto e sul sacco",7,"F"],["Ginocchiata diretta: spiegazione e dimostrazione",1,"S"],["Ginocchiata diretta: prova",4,"F"],["Difesa dal calcio (check): spiegazione e dimostrazione",2,"S"],["Difesa dal calcio (check): prova con partner",6,"F"],["Acqua e passaggi",2,"P"]],"i":["Teep (calcio frontale a spinta): ginocchio su, anca avanti, spinta con la pianta del piede, equilibrio","Calcio circolare (tae): pivot sul piede d'appoggio, rotazione dell'anca, braccio opposto che accompagna. Colpisci con lo stinco, non con il piede","Ginocchiata diretta (khao): anche avanti, busto leggermente indietro, mani che guidano","Check: alza lo stinco davanti al calcio in arrivo, prima da fermo, poi con un partner che calcia lento"]},{"n":"Drill ai colpitori","m":20,"k":"drill","r":{"n":4,"w":120,"p":30},"p":[["Formare le coppie e prendere i colpitori",3,"P"],["Spiegare il drill e l'obiettivo dei round",2,"S"],["4 round da 2' (A, B, A, B)",8,"F"],["Cambio ruolo tra i round: 3 × 30\"",1.5,"P"],["Correzioni, una per coppia",2,"S"],["Acqua",2,"P"],["Riordino dei colpitori",1.5,"P"]],"i":["Round 1: teep e calcio circolare","Round 2: combinazioni pugno + calcio (1-2-calcio)","Round 3: aggiungi la ginocchiata","Round 4: libero, alternando gamba destra e sinistra"]},{"n":"Condizionamento","m":12,"k":"cond","p":[["Spiegare il circuito",1,"S"],["3 giri da 2'50\": squat con salto 30\" · plank laterale 20\" per lato · calci a vuoto 40\" · mountain climber 30\" · riposo 30\"",8.5,"F"],["Cambi e acqua",2.5,"P"]],"i":[]},{"n":"Defaticamento","m":8,"k":"soft","p":[["Camminata e respirazione",2,"F"],["Stretching statico, 20-30\" a posizione",5,"F"],["Feedback e saluto: una cosa positiva e una correzione a testa",1,"S"]],"i":["Più attenzione a anche e adduttori"]}]},"ven":{"tab":"Ven","day":"Venerdì","title":"Combinazioni e sparring","goal":"Unire quanto imparato, conoscere il clinch di base, provare lo sparring in sicurezza.","intensity":"Media · contatto 20-30%","dow":5,"note":"Prima settimana: venerdì 4 dicembre niente sparring. Il primo sparring leggero è venerdì 11 dicembre.","errors":"Colpire troppo forte · abbassare la guardia dopo ogni combinazione · dimenticare di respirare · partner troppo diversi per taglia o livello.","blocks":[{"n":"Accoglienza e regole di sparring","m":5,"k":"soft","p":[["Saluto in fila",1,"P"],["Regole di sicurezza dello sparring",2,"S"],["Controllo delle protezioni",2,"P"]],"i":[]},{"n":"Riscaldamento","m":15,"k":"warm","p":[["Corda o corsetta leggera",3,"F"],["Mobilità articolare",2,"F"],["Skip, calciate dietro, affondi",3,"F"],["Shadow boxing a ritmo crescente",2,"F"],["Attivazione: flessioni, squat, plank",3,"F"],["Cambi e acqua",2,"P"]],"i":[]},{"n":"Ripasso e combinazioni","m":20,"k":"tech","p":[["Prendere i colpitori e formare le coppie",2,"P"],["Spiegare le 3 combinazioni (1' ciascuna)",3,"S"],["3 combinazioni × 2' (a vuoto e ai colpitori)",6,"F"],["Cambi",1,"P"],["Difesa: spiegazione e dimostrazione",1,"S"],["Difesa in coppia a ritmo lento: parata, schivata, check",4,"F"],["Correzioni",1,"S"],["Acqua",2,"P"]],"i":["1-2-calcio circolare","Jab-teep-cross","1-2-hook-calcio basso"]},{"n":"Clinch, introduzione","m":10,"k":"tech","p":[["Spiegare presa e controllo",2,"S"],["2 turni da 3' tra compagni di taglia simile",6,"F"],["Cambio coppie",1,"P"],["Acqua",1,"P"]],"i":["Presa del collo (plum) e controllo del partner","Spinta e tirata con i polsi, posizione di base","Nessuna proiezione e nessuna ginocchiata piena: solo posizione, equilibrio e respirazione"]},{"n":"Sparring tecnico leggero","m":25,"k":"spar","r":{"n":6,"w":120,"p":60},"p":[["Protezioni e coppie",3,"P"],["Istruzioni sui temi dei round",2,"S"],["6 round da 2'",12,"F"],["5 pause da 1': cambio compagno ogni due round, correzione breve",5,"P"],["Feedback finale",3,"S"]],"i":["Contatto 20-30%, solo tecnica, ritmo lento","Round 1 solo pugni · 2 pugni e teep · 3 pugni e calci al corpo · 4 libero tecnico · 5 e 6 libero tecnico con nuovo partner"]},{"n":"Condizionamento","m":7,"k":"cond","p":[["Spiegare il circuito",1,"S"],["2 giri da 2': plank 30\" · squat 40\" · flessioni 20\" · riposo 30\"",4,"F"],["Acqua",2,"P"]],"i":[]},{"n":"Defaticamento","m":8,"k":"soft","p":[["Camminata e respirazione",2,"F"],["Stretching statico, 20-30\" a posizione",5,"F"],["Feedback e saluto: una cosa positiva e una correzione a testa",1,"S"]],"i":[]}]}};
 const KIND = {soft:'Accoglienza / defaticamento',warm:'Riscaldamento',tech:'Tecnica',drill:'Drill',cond:'Condizionamento',spar:'Sparring'};
 const PLAN = [
   {d:2,wd:'mer',lesson:'lun',label:'Lezione 1 · base e pugni',s:'Con presentazione, moduli, certificati e regole'},
@@ -226,6 +203,10 @@ let current = (location.hash||'').slice(1);
 if(!TABS.some(t=>t[0]===current)){ current = ({1:'lun',3:'mer',5:'ven'})[todayDow] || 'lun'; }
 const openBlock = {};
 
+const fm=x=>{const m=Math.floor(x),sec=Math.round((x-m)*60);return !sec?`${m}'`:m?`${m}'${String(sec).padStart(2,'0')}"`:`${sec}"`};
+const TAGN={S:'Spiegare',F:'Fare',P:'Passaggi'};
+const sums=ps=>ps.reduce((o,p)=>(o[p[2]]+=p[1],o),{S:0,F:0,P:0});
+const splitHtml=ps=>{const t=sums(ps);return '<div class="split">'+['S','F','P'].filter(k=>t[k]).map(k=>`<span class="tag ${k}">${TAGN[k]} ${fm(t[k])}</span>`).join('')+'</div>'};
 function renderTabs(){
   $('#tabs').innerHTML = TABS.map(([id,l])=>{
     const L = LESSONS[id];
@@ -240,15 +221,17 @@ function lessonView(id){
   const bar = L.blocks.map((b,i)=>`<button class="seg" data-k="${b.k}" style="flex:${b.m}" data-b="${i}" aria-pressed="${open===i}" aria-label="${b.n}, ${b.m} minuti">${b.m}'</button>`).join('');
   const blocks = L.blocks.map((b,i)=>{
     const isOpen = open===i;
-    const rounds = b.r ? `<p class="sub">${b.r.n} round da ${b.r.w>=60?(b.r.w/60)+'\'':b.r.w+'"'} · pausa ${b.r.p>=60?(b.r.p/60)+'\'':b.r.p+'"'}</p>` : '';
+    const rounds = b.r ? `<p class="sub">${b.r.n} round da ${fm(b.r.w/60)} · pausa ${fm(b.r.p/60)} (il timer segue solo i round)</p>` : '';
+    const parts = `<ul class="parts">${b.p.map(p=>`<li><span class="tag ${p[2]}">${TAGN[p[2]]}</span><span>${p[0]}</span><b>${fm(p[1])}</b></li>`).join('')}</ul>`;
+    const pts = b.i.length ? `<ul>${b.i.map(x=>`<li>${x}</li>`).join('')}</ul>` : '';
     return `<div class="block" style="--c:var(--c-${b.k})"><button data-toggle="${i}" aria-expanded="${isOpen}">
-      <span class="dot"></span><span class="t">${b.n}<small>${KIND[b.k]}</small></span><span class="min">${b.m}'</span></button>
-      ${isOpen?`<div class="body">${rounds}<ul>${b.i.map(x=>`<li>${x}</li>`).join('')}</ul></div>`:''}</div>`;
+      <span class="dot"></span><span class="t">${b.n}<small>${KIND[b.k]}</small></span><span class="min">${fm(b.m)}</span></button>
+      ${isOpen?`<div class="body">${splitHtml(b.p)}${rounds}${parts}${b.i.length?'<h3 style="font-size:18px">Punti da curare</h3>':''}${pts}</div>`:''}</div>`;
   }).join('');
   return `<section class="lesson-head">
     <div class="chips"><span class="chip">${L.day}</span><span class="chip">90 minuti</span><span class="chip">${L.intensity}</span>${isToday?'<span class="chip today">Oggi</span>':''}</div>
     <h2>${L.title}</h2><p class="sub">${L.goal}</p>
-    <button class="cta" data-live="${id}">Avvia in sala</button></section>
+    ${splitHtml(L.blocks.flatMap(b=>b.p))}<button class="cta" data-live="${id}">Avvia in sala</button></section>
     <div><div class="timeline" role="group" aria-label="Linea del tempo della lezione">${bar}</div></div>
     <div class="scale"><span>0'</span><span>30'</span><span>60'</span><span>90'</span></div>
     ${L.note?`<div class="note">${L.note}</div>`:''}
@@ -328,6 +311,12 @@ function loadBlock(i){
   const L=LESSONS[S.id]; S.b=Math.max(0,Math.min(L.blocks.length-1,i)); const b=L.blocks[S.b];
   S.run=false; clearInterval(tick); S.ph='work'; S.round=1; S.left=b.r?b.r.w:b.m*60; paint();
 }
+function tipFor(b){
+  if(b.r) return b.i[0]||'';
+  const el=b.m*60-S.left; let acc=0;
+  for(let k=0;k<b.p.length;k++){acc+=b.p[k][1]*60; if(el<acc||k===b.p.length-1){const n=b.p[k+1];return TAGN[b.p[k][2]]+': '+b.p[k][0]+(n&&el<acc?'  →  poi: '+n[0]:'');}}
+  return '';
+}
 function paint(){
   const L=LESSONS[S.id], b=L.blocks[S.b], st=$('#stage');
   st.classList.toggle('rest',S.ph==='rest');
@@ -335,7 +324,7 @@ function paint(){
   $('#stKind').textContent = b.r ? (S.ph==='rest'?`Pausa · round ${S.round} di ${b.r.n}`:`Round ${S.round} di ${b.r.n}`) : KIND[b.k]+' · '+b.m+' min';
   $('#stName').textContent = S.ph==='rest'?'Riposo':b.n;
   $('#stClock').textContent=fmt(S.left);
-  $('#stTip').textContent=b.i[0].replace(/^\d+['"]\s*/,'');
+  $('#stTip').textContent=tipFor(b);
   $('#stGo').textContent=S.run?'Pausa':'Avvia';
 }
 function step(){
