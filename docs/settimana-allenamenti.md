@@ -24,21 +24,23 @@ Principio guida: **prima il corpo che capisce, poi la forza**. Pochi gesti, ripe
 
 Le lezioni dei lunedì e dei mercoledì seguono lo stesso schema, così gli allievi sanno cosa aspettarsi. Nelle sezioni 3, 4 e 5 ogni blocco è diviso in **spiegare**, **fare** e **passaggi** (acqua, cambi, formare le coppie, prendere e riordinare i colpitori), così sai quanto tempo hai per ciascuna cosa. I totali dei blocchi non cambiano.
 
-| Blocco | Durata |
-|---|---|
-| Accoglienza, regole e saluto | 5' |
-| Riscaldamento | 15' |
-| Tecnica (spiegazione, dimostrazione, ripetizioni a vuoto e in coppia) | 30' |
-| Drill e lavoro ai colpitori / sacco | 20' |
-| Condizionamento | 12' |
-| Defaticamento e stretching | 8' |
-| **Totale** | **90'** |
+| Blocco | Lunedì e mercoledì | Venerdì |
+|---|---|---|
+| Accoglienza, regole e saluto | 5' | 5' |
+| Riscaldamento | 15' | 15' |
+| Tecnica (spiegazione, dimostrazione, ripetizioni) | 30' | – |
+| Drill ai colpitori | 20' | – |
+| Ripasso e combinazioni | – | 20' |
+| Clinch, introduzione | – | 10' |
+| Sparring tecnico leggero | – | 25' |
+| Addominali e defaticamento | 20' | 15' |
+| **Totale** | **90'** | **90'** |
 
-Il venerdì cambia la parte centrale per fare spazio allo sparring (vedi sezione 5).
+Il venerdì cambia la parte centrale per fare spazio allo sparring (vedi sezione 5). Il condizionamento a circuito non c'è più: lo sostituiscono i 500 addominali del defaticamento.
 
-**Riscaldamento tipo (15')** – 3' corda o corsetta leggera · 2' mobilità articolare (caviglie, anche, spalle, polsi, collo) · 3' skip, calciate dietro, ginocchia alte, affondi dinamici · 3' shadow boxing lento sulla guardia · 4' attivazione: 2 × 10 push-up sulle ginocchia o normali, 2 × 15 squat, 2 × 20" plank.
+**Riscaldamento tipo (15')** – 4' corda o corsetta leggera · 5' mobilità (caviglie, anche, spalle, polsi, collo) · 5' attivazione: chi sa già fare qualcosa fa shadow boxing lento sulla guardia, chi non sa ancora fa apertura di gambe e braccia sul posto · 1' cambi e acqua.
 
-**Defaticamento tipo (8')** – 2' camminata e respirazione · 6' stretching statico (adduttori, quadricipiti, flessori dell'anca, polpacci, spalle, collo), 20-30" per posizione.
+**Addominali e defaticamento (20' lunedì e mercoledì, 15' venerdì)** – 500 addominali in 5 varianti da 100 ripetizioni (circa 11', le varianti le scegli tu) · stretching statico, 20-30" a posizione (7' lunedì e mercoledì, 3' venerdì) · feedback e saluto.
 
 **Rituale d'inizio e fine** – saluto in fila con un breve inchino (*wai*) verso il maestro e verso i compagni. Piccolo gesto, ma insegna il rispetto che è alla base di questo sport.
 
@@ -48,7 +50,7 @@ Il venerdì cambia la parte centrale per fare spazio allo sparring (vedi sezione
 
 **Obiettivo:** Guardia stabile, posizione dei piedi, spostamenti, i tre pugni base e una difesa semplice.
 
-**Ripartizione dei 90':** spiegare 15' · fare 60' · passaggi, acqua e cambi 15'.
+**Ripartizione dei 90':** spiegare 12' · fare 68' · passaggi, acqua e cambi 10'.
 
 ### Accoglienza e regole · 5'
 
@@ -69,12 +71,15 @@ Il venerdì cambia la parte centrale per fare spazio allo sparring (vedi sezione
 
 | Tempo | Tipo | Cosa |
 |---:|---|---|
-| 3' | Fare | Corda o corsetta leggera |
-| 2' | Fare | Mobilità: caviglie, anche, spalle, polsi, collo |
-| 3' | Fare | Skip, calciate dietro, ginocchia alte, affondi |
-| 3' | Fare | Shadow boxing lento sulla guardia |
-| 3' | Fare | Attivazione: 2×10 push-up, 2×15 squat, 2×20" plank |
+| 4' | Fare | Corda o corsetta leggera |
+| 5' | Fare | Mobilità: caviglie, anche, spalle, polsi, collo |
+| 5' | Fare | Attivazione: chi sa già fare qualcosa, shadow boxing lento sulla guardia · chi non sa ancora, apertura di gambe e braccia sul posto |
 | 1' | Passaggi | Cambi e acqua |
+
+**Punti da curare:**
+
+- Chi sa già fare qualcosa: shadow boxing lento sulla guardia
+- Chi non sa ancora fare nulla: apertura di gambe e braccia sul posto
 
 ### Tecnica · 30'
 
@@ -106,51 +111,43 @@ Il venerdì cambia la parte centrale per fare spazio allo sparring (vedi sezione
 
 ### Drill ai colpitori · 20'
 
-*Spiegare 4' · fare 8' · passaggi 8'*
+*Spiegare 1' · fare 14' · passaggi 5'*
 
 | Tempo | Tipo | Cosa |
 |---:|---|---|
-| 3' | Passaggi | Formare le coppie e prendere i colpitori |
-| 2' | Spiegare | Spiegare il drill e l'obiettivo dei round |
-| 8' | Fare | 4 round da 2' (A, B, A, B) |
-| 1'30" | Passaggi | Cambio ruolo tra i round: 3 × 30" |
-| 2' | Spiegare | Correzioni, una per coppia |
-| 2' | Passaggi | Acqua |
-| 1'30" | Passaggi | Riordino dei colpitori |
+| 2' | Passaggi | Formare le coppie e prendere i colpitori |
+| 1' | Spiegare | Spiegare il drill e l'obiettivo dei round |
+| 7' | Fare | Parte 1: 3 round da 2' con 2 pause da 30" (colpisce A, tiene B). Correzioni durante i round |
+| 1' | Passaggi | Cambio ruolo (una sola volta) |
+| 7' | Fare | Parte 2: 3 round da 2' con 2 pause da 30" (colpisce B, tiene A). Correzioni durante i round |
+| 1' | Passaggi | Acqua |
+| 1' | Passaggi | Riordino dei colpitori |
 
-Timer dell'artefatto: 4 round da 2', pausa 30".
+Timer dell'artefatto: 6 round da 2': 3 + 3, con un solo cambio ruolo dopo il 3° (1') e pause da 30" tra gli altri round.
 
 **Punti da curare:**
 
-- Coppie: uno tiene i colpitori, uno colpisce, cambio ruolo a ogni round
+- Il cambio ruolo è uno solo, dopo i primi 3 round
+- Correggi durante i round, camminando tra le coppie. Se i presenti sono dispari e tieni tu i colpitori a qualcuno, in quel momento non puoi correggere gli altri
 - Round 1: solo jab e 1-2 lenti
 - Round 2: 1-2-hook
 - Round 3: libero sulle combinazioni apprese
-- Round 4: libero, ritmo un po' più alto
 
-### Condizionamento · 12'
+### Addominali e defaticamento · 20'
 
-*Spiegare 1' · fare 9' · passaggi 2'*
-
-| Tempo | Tipo | Cosa |
-|---:|---|---|
-| 1' | Spiegare | Spiegare il circuito |
-| 9' | Fare | 3 giri da 3': corda 1' · plank 30" · affondi alternati 40" · bicicletta addominale 40" · riposo 30" |
-| 2' | Passaggi | Cambi e acqua |
-
-### Defaticamento · 8'
-
-*Spiegare 1' · fare 7' · passaggi 0'*
+*Spiegare 2' · fare 18' · passaggi 0'*
 
 | Tempo | Tipo | Cosa |
 |---:|---|---|
-| 2' | Fare | Camminata e respirazione |
-| 5' | Fare | Stretching statico, 20-30" a posizione |
-| 1' | Spiegare | Feedback e saluto: una cosa positiva e una correzione a testa |
+| 11' | Fare | 500 addominali: 5 varianti da 100 ripetizioni (circa 2'12" a variante, cambi inclusi) |
+| 7' | Fare | Stretching statico, 20-30" a posizione |
+| 2' | Spiegare | Feedback e saluto: una cosa positiva e una correzione a testa |
 
 **Punti da curare:**
 
-- Adduttori, quadricipiti, flessori dell'anca, polpacci, spalle, collo
+- 5 varianti da 100 ripetizioni, per un totale di 500. Le varianti le scegli tu (quelle del tuo maestro)
+- Chi non riesce a finire le 100 si ferma e passa alla variante dopo, senza forzare
+- Respiro regolare, collo rilassato, niente strappi
 
 **Errori comuni:** Mani che scendono dopo il colpo · pugno solo di braccio · piedi incrociati negli spostamenti · respiro trattenuto.
 
@@ -160,7 +157,7 @@ Timer dell'artefatto: 4 round da 2', pausa 30".
 
 **Obiettivo:** Equilibrio e rotazione dell'anca, i calci base, la ginocchiata diretta, la difesa dal calcio.
 
-**Ripartizione dei 90':** spiegare 17' · fare 58'30" · passaggi, acqua e cambi 14'30".
+**Ripartizione dei 90':** spiegare 14' · fare 67' · passaggi, acqua e cambi 9'.
 
 ### Accoglienza e ripasso · 5'
 
@@ -178,12 +175,15 @@ Timer dell'artefatto: 4 round da 2', pausa 30".
 
 | Tempo | Tipo | Cosa |
 |---:|---|---|
-| 3' | Fare | Corda o corsetta leggera |
-| 3' | Fare | Mobilità d'anca: cerchi d'anca, oscillazioni della gamba |
-| 3' | Fare | Skip, calciate dietro, ginocchia alte, affondi |
-| 2' | Fare | Shadow boxing lento |
-| 3' | Fare | Attivazione: push-up, squat, plank |
+| 4' | Fare | Corda o corsetta leggera |
+| 5' | Fare | Mobilità: caviglie, anche (con più attenzione), spalle, polsi, collo |
+| 5' | Fare | Attivazione: chi sa già fare qualcosa, shadow boxing lento sulla guardia · chi non sa ancora, apertura di gambe e braccia sul posto |
 | 1' | Passaggi | Cambi e acqua |
+
+**Punti da curare:**
+
+- Chi sa già fare qualcosa: shadow boxing lento sulla guardia
+- Chi non sa ancora fare nulla: apertura di gambe e braccia sul posto
 
 ### Tecnica · 30'
 
@@ -210,50 +210,43 @@ Timer dell'artefatto: 4 round da 2', pausa 30".
 
 ### Drill ai colpitori · 20'
 
-*Spiegare 4' · fare 8' · passaggi 8'*
+*Spiegare 1' · fare 14' · passaggi 5'*
 
 | Tempo | Tipo | Cosa |
 |---:|---|---|
-| 3' | Passaggi | Formare le coppie e prendere i colpitori |
-| 2' | Spiegare | Spiegare il drill e l'obiettivo dei round |
-| 8' | Fare | 4 round da 2' (A, B, A, B) |
-| 1'30" | Passaggi | Cambio ruolo tra i round: 3 × 30" |
-| 2' | Spiegare | Correzioni, una per coppia |
-| 2' | Passaggi | Acqua |
-| 1'30" | Passaggi | Riordino dei colpitori |
+| 2' | Passaggi | Formare le coppie e prendere i colpitori |
+| 1' | Spiegare | Spiegare il drill e l'obiettivo dei round |
+| 7' | Fare | Parte 1: 3 round da 2' con 2 pause da 30" (colpisce A, tiene B). Correzioni durante i round |
+| 1' | Passaggi | Cambio ruolo (una sola volta) |
+| 7' | Fare | Parte 2: 3 round da 2' con 2 pause da 30" (colpisce B, tiene A). Correzioni durante i round |
+| 1' | Passaggi | Acqua |
+| 1' | Passaggi | Riordino dei colpitori |
 
-Timer dell'artefatto: 4 round da 2', pausa 30".
+Timer dell'artefatto: 6 round da 2': 3 + 3, con un solo cambio ruolo dopo il 3° (1') e pause da 30" tra gli altri round.
 
 **Punti da curare:**
 
+- Il cambio ruolo è uno solo, dopo i primi 3 round
+- Correggi durante i round, camminando tra le coppie. Se i presenti sono dispari e tieni tu i colpitori a qualcuno, in quel momento non puoi correggere gli altri
 - Round 1: teep e calcio circolare
 - Round 2: combinazioni pugno + calcio (1-2-calcio)
-- Round 3: aggiungi la ginocchiata
-- Round 4: libero, alternando gamba destra e sinistra
+- Round 3: aggiungi la ginocchiata, alternando gamba destra e sinistra
 
-### Condizionamento · 12'
+### Addominali e defaticamento · 20'
 
-*Spiegare 1' · fare 8'30" · passaggi 2'30"*
-
-| Tempo | Tipo | Cosa |
-|---:|---|---|
-| 1' | Spiegare | Spiegare il circuito |
-| 8'30" | Fare | 3 giri da 2'50": squat con salto 30" · plank laterale 20" per lato · calci a vuoto 40" · mountain climber 30" · riposo 30" |
-| 2'30" | Passaggi | Cambi e acqua |
-
-### Defaticamento · 8'
-
-*Spiegare 1' · fare 7' · passaggi 0'*
+*Spiegare 2' · fare 18' · passaggi 0'*
 
 | Tempo | Tipo | Cosa |
 |---:|---|---|
-| 2' | Fare | Camminata e respirazione |
-| 5' | Fare | Stretching statico, 20-30" a posizione |
-| 1' | Spiegare | Feedback e saluto: una cosa positiva e una correzione a testa |
+| 11' | Fare | 500 addominali: 5 varianti da 100 ripetizioni (circa 2'12" a variante, cambi inclusi) |
+| 7' | Fare | Stretching statico, 20-30" a posizione |
+| 2' | Spiegare | Feedback e saluto: una cosa positiva e una correzione a testa |
 
 **Punti da curare:**
 
-- Più attenzione a anche e adduttori
+- 5 varianti da 100 ripetizioni, per un totale di 500. Le varianti le scegli tu (quelle del tuo maestro)
+- Chi non riesce a finire le 100 si ferma e passa alla variante dopo, senza forzare
+- Respiro regolare, collo rilassato, niente strappi
 
 **Errori comuni:** Calcio dal solo ginocchio senza anca · piede d'appoggio che non ruota · busto troppo indietro · guardia che crolla durante il calcio.
 
@@ -263,7 +256,7 @@ Timer dell'artefatto: 4 round da 2', pausa 30".
 
 **Obiettivo:** Unire quanto imparato, conoscere il clinch di base, provare lo sparring in sicurezza.
 
-**Ripartizione dei 90':** spiegare 16' · fare 52' · passaggi, acqua e cambi 22'.
+**Ripartizione dei 90':** spiegare 15' · fare 56' · passaggi, acqua e cambi 19'.
 
 ### Accoglienza e regole di sparring · 5'
 
@@ -277,16 +270,19 @@ Timer dell'artefatto: 4 round da 2', pausa 30".
 
 ### Riscaldamento · 15'
 
-*Spiegare 0' · fare 13' · passaggi 2'*
+*Spiegare 0' · fare 14' · passaggi 1'*
 
 | Tempo | Tipo | Cosa |
 |---:|---|---|
-| 3' | Fare | Corda o corsetta leggera |
-| 2' | Fare | Mobilità articolare |
-| 3' | Fare | Skip, calciate dietro, affondi |
-| 2' | Fare | Shadow boxing a ritmo crescente |
-| 3' | Fare | Attivazione: push-up, squat, plank |
-| 2' | Passaggi | Cambi e acqua |
+| 4' | Fare | Corda o corsetta leggera |
+| 5' | Fare | Mobilità: caviglie, anche, spalle, polsi, collo |
+| 5' | Fare | Attivazione: chi sa già fare qualcosa, shadow boxing lento sulla guardia · chi non sa ancora, apertura di gambe e braccia sul posto |
+| 1' | Passaggi | Cambi e acqua |
+
+**Punti da curare:**
+
+- Chi sa già fare qualcosa: shadow boxing lento sulla guardia
+- Chi non sa ancora fare nulla: apertura di gambe e braccia sul posto
 
 ### Ripasso e combinazioni · 20'
 
@@ -345,25 +341,21 @@ Timer dell'artefatto: 6 round da 2', pausa 1'.
 - Contatto 20-30%, solo tecnica, ritmo lento
 - Round 1 solo pugni · 2 pugni e teep · 3 pugni e calci al corpo · 4 libero tecnico · 5 e 6 libero tecnico con nuovo partner
 
-### Condizionamento · 7'
+### Addominali e defaticamento · 15'
 
-*Spiegare 1' · fare 4' · passaggi 2'*
-
-| Tempo | Tipo | Cosa |
-|---:|---|---|
-| 1' | Spiegare | Spiegare il circuito |
-| 4' | Fare | 2 giri da 2': plank 30" · squat 40" · push-up 20" · riposo 30" |
-| 2' | Passaggi | Acqua |
-
-### Defaticamento · 8'
-
-*Spiegare 1' · fare 7' · passaggi 0'*
+*Spiegare 1' · fare 14' · passaggi 0'*
 
 | Tempo | Tipo | Cosa |
 |---:|---|---|
-| 2' | Fare | Camminata e respirazione |
-| 5' | Fare | Stretching statico, 20-30" a posizione |
+| 11' | Fare | 500 addominali: 5 varianti da 100 ripetizioni (circa 2'12" a variante, cambi inclusi) |
+| 3' | Fare | Stretching statico, 20-30" a posizione |
 | 1' | Spiegare | Feedback e saluto: una cosa positiva e una correzione a testa |
+
+**Punti da curare:**
+
+- 5 varianti da 100 ripetizioni, per un totale di 500. Le varianti le scegli tu (quelle del tuo maestro)
+- Chi non riesce a finire le 100 si ferma e passa alla variante dopo, senza forzare
+- Respiro regolare, collo rilassato, niente strappi
 
 **Errori comuni:** Colpire troppo forte · abbassare la guardia dopo ogni combinazione · dimenticare di respirare · partner troppo diversi per taglia o livello.
 
@@ -398,7 +390,7 @@ Il 1° dicembre è un martedì, quindi la prima settimana ha solo due lezioni.
 ## 8. Come adattare la lezione al gruppo
 
 - **Più facile:** ridurre i round a 90", eliminare la ginocchiata, tenere solo teep e un tipo di calcio, allungare il riposo.
-- **Più difficile:** round da 3', aggiungere combinazioni a 4 colpi, calci con partner che avanza, condizionamento con 4 giri.
+- **Più difficile:** round da 3', aggiungere combinazioni a 4 colpi, calci con partner che avanza, una variante di addominali più difficile.
 - **Gruppi con livelli diversi:** dividere la sala in due stazioni (a vuoto / ai colpitori), far ruotare i più esperti come "partner coach".
 - **Dosare il carico:** chiedere a metà lezione "da 1 a 10 quanto sei stanco?". Se più di metà dice 9, allungare il riposo.
 - **Feedback:** ogni lezione, a ognuno **un'osservazione positiva e una correzione**.
